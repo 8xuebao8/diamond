@@ -11,7 +11,7 @@
 @media(max-width:680px){input,select{font-size:16px;min-height:46px}.switch button{min-height:44px}.shared-grid label{font-size:13px}.shared-grid label span{font-size:11px}.shared-grid .control{min-width:0}.description-row select{font-size:14px}.optional summary{min-height:48px}.optional summary span{line-height:1.6}.badge{white-space:normal;text-align:center;max-width:112px}.description-explainer p{font-size:12px}}
 @media(max-width:359px){.shared-grid{grid-template-columns:minmax(0,1fr)}header{flex-wrap:wrap}.raw-grid{grid-template-columns:minmax(0,1fr)!important}}
 
-.table-actions{margin:0 0 10px}.table-actions button{border:0;background:transparent;padding:4px 0;color:#19755c;font:inherit;font-size:12px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:32px}.table-measurement:has([data-panel="table:raw"]:not([hidden])){grid-column:span 2;background:#f6faf7;padding:16px;border:1px solid #dce8df;border-radius:8px}.table-readings{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:12px}.table-measurement .average{overflow-wrap:anywhere}.table-measurement .hint{display:block;margin-top:5px}@media(max-width:359px){.table-measurement:has([data-panel="table:raw"]:not([hidden])){grid-column:1/-1}}
+.table-actions{margin:0 0 10px}.table-actions button{border:0;background:transparent;padding:4px 0;color:#19755c;font:inherit;font-size:12px;text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:32px}.table-measurement:has(:is([data-panel="table:raw"],[data-panel="diameter:raw"]):not([hidden])){grid-column:span 2;background:#f6faf7;padding:16px;border:1px solid #dce8df;border-radius:8px}.table-readings{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:12px}.table-measurement .average{overflow-wrap:anywhere}.table-measurement .hint{display:block;margin-top:5px}@media(max-width:359px){.table-measurement:has(:is([data-panel="table:raw"],[data-panel="diameter:raw"]):not([hidden])){grid-column:1/-1}}
 
 /* Stage 3: shared engine output, with room for stage 4 bars and table highlights. */
 .calculations{margin-top:34px}.calculation-note{font-size:12px;line-height:1.8;color:#6c8075;margin:0 0 12px}.calculations .section-heading{justify-content:space-between;align-items:flex-end;margin-bottom:14px}.calculations .eyebrow{margin-bottom:8px}#result-status{font-size:13px;color:#527266;margin:0 0 20px}.result-row{display:grid;grid-template-columns:220px minmax(0,1fr) 200px;gap:24px;background:white;border:1px solid #dfe7e3;border-radius:10px;padding:24px;margin-bottom:12px;align-items:start}.result-number{display:block;font-size:11px;color:#7a978a;margin-bottom:10px}.result-title h3{font-weight:600;font-size:16px;margin:0 0 7px}.result-title p{font-size:11px;line-height:1.6;color:#72867c;margin:0}.result-body{min-width:0}.formula{font-size:13px;line-height:1.9;margin:0 0 10px}.calculation-steps p{font-size:13px;line-height:1.9;margin:4px 0;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}.source{font-size:11px!important;color:#89978d;line-height:1.7}.result-message{color:#877344;font-size:12px;line-height:1.8}.result-outcome{display:flex;flex-direction:column;align-items:flex-end;gap:10px}.result-outcome strong{font-size:27px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere;max-width:100%;text-align:right}.result-outcome span{font-size:11px;color:#84968a;text-align:right;line-height:1.6}.result-outcome b{font-size:13px;border:1px solid #d3ded7;padding:7px 12px;border-radius:5px;white-space:nowrap}.standards{font-size:12px;margin-top:14px}.standards summary{cursor:pointer;padding:8px 0;color:#366b56}.standards table{border-collapse:collapse;width:100%;max-width:450px;margin:10px 0}.standards td,.standards th{padding:8px;border-bottom:1px solid #edf1ee;text-align:left;font-weight:normal}.standards p{line-height:1.8}.result-row[data-status=invalid]{border-color:#d9a89b}.result-row[data-status=waiting] .result-outcome strong{color:#9aa69f}@media(max-width:1050px){.result-row{grid-template-columns:165px minmax(0,1fr) 150px;gap:18px}}@media(max-width:680px){.result-row{grid-template-columns:minmax(0,1fr) 120px;gap:18px;padding:20px}.result-body{grid-column:1/-1;grid-row:2}.result-outcome{grid-column:2;grid-row:1}.result-outcome strong{font-size:23px}.result-title p{overflow-wrap:anywhere}.calculations .section-heading{display:block}.standards summary{min-height:44px;padding-top:13px}.calculations .section-heading>p{line-height:1.8;margin-top:12px}}
@@ -23,10 +23,15 @@
 .result-title h3,.result-title p{font-size:16px;line-height:1.5;font-weight:500;color:#243c3c;overflow-wrap:anywhere}.result-title h3{margin:0 0 5px}.result-title p{margin:0}
 
 @media(max-width:680px){.input-sheet input,.optional input{font-size:16px;min-height:48px;scroll-margin-top:24px;scroll-margin-bottom:120px}.table-actions button{min-height:44px}}
+
+/* Worksheet links navigate to the matching calculation without editing data. */
+.worksheet-jump{cursor:pointer}.worksheet-jump path{fill:none;stroke:#19755c;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.worksheet-jump:hover path,.worksheet-jump:focus path{stroke:#105341;stroke-width:2.5}.result-row{scroll-margin-top:24px}.result-row:target{outline:2px solid #19755c;outline-offset:3px}
+
+.linked-source{display:block;line-height:1.7;margin:0 0 8px}.linked-source.is-derived{color:#19755c;background:#edf6f1;padding:8px;border-radius:6px}.linked-output-note{margin:0;padding:0 24px 16px;color:#19755c;font-size:13px}
 </style><style>.band-box{margin:20px 0}.band-caption,.band-current{font-size:12px;line-height:1.7;margin:8px 0}.band-caption{color:#64766c}.grade-track{position:relative;display:flex;height:25px;margin-top:24px;border-radius:4px;isolation:isolate}.grade-segment{min-width:0;text-align:center;color:#fff;font-size:10px;line-height:25px;overflow:hidden}.grade-segment[title=G]{color:#302b16}.grade-pointer{position:absolute;top:-20px;transform:translateX(-50%);font-size:20px;line-height:20px;color:#172f29;filter:drop-shadow(0 1px 0 white);pointer-events:none}.band-ticks{display:flex;justify-content:space-between;font-size:10px;color:#7a8a80;padding-top:7px}.band-current{font-variant-numeric:tabular-nums}.category-track{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}.category-cell{flex:1;min-width:62px;font-size:11px;line-height:1.5;text-align:center;padding:8px 5px;border:1px solid #dfe5e1;border-bottom:4px solid;border-radius:5px}.category-cell small{display:block}.category-cell.selected{outline:2px solid #254e3e;outline-offset:2px;background:#eff8f0}.reference{margin:16px 0 4px;font-size:12px}.reference summary{cursor:pointer;padding:12px 0;min-height:44px;color:#276b53;font-weight:600}.reference-note{line-height:1.8;color:#52715d}.table-scroll{overflow:auto;max-width:100%;max-height:420px;border:1px solid #dce5df;border-radius:6px;overscroll-behavior:contain}.table-scroll:focus-visible{outline:2px solid #25844b;outline-offset:2px}.lookup-table{border-collapse:separate;border-spacing:0;min-width:100%;font-variant-numeric:tabular-nums;font-size:12px}.lookup-table caption{text-align:left;padding:12px;background:#f3f6f4}.lookup-table th,.lookup-table td{white-space:nowrap;padding:10px 12px;text-align:center;border-right:1px solid #e7ece9;border-bottom:1px solid #e7ece9;font-weight:normal}.lookup-table tr:first-of-type th{position:sticky;top:0;z-index:2;background:#eef3f0}.lookup-table th:first-child{position:sticky;left:0;z-index:1;background:#f5f8f6}.lookup-table tr:first-of-type th:first-child{z-index:3}.lookup-table .lookup-axis{background:#dceee2!important;font-weight:700}.lookup-table .lookup-hit{background:#c0eacb;box-shadow:inset 0 0 0 2px #25844b;font-weight:700;color:#17452b}.result-outcome b[data-grade=EX]{color:#236a3f;background:#eef8f0}.result-outcome b[data-grade=VG]{color:#126a68;background:#ecf7f6}.result-outcome b[data-grade=G]{color:#756014;background:#fff9df}.result-outcome b[data-grade=F]{color:#b63d33;background:#fff0ed}.result-outcome b[data-grade=P]{color:#962f43;background:#fbeef0}@media(max-width:680px){.band-box{margin-top:14px}.grade-segment{font-size:9px}.lookup-table th,.lookup-table td{padding:9px}.category-cell{min-width:65px}.table-scroll{max-height:330px}}
 
 .lookup-table .lookup-cross{background:#f0f7f2}
-</style><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M2 12L10 3H22L30 12L16 30Z' fill='%23177767'/%3E%3C/svg%3E"></head><body><main><header><div><p class="eyebrow">DIAMOND PROPORTIONS</p><h1>钻石比例工作表</h1><p class="subtitle">原始数据只填一次，供整张比例表共用。</p></div><span class="badge">输入 → 计算 → 比例图</span></header><div class="progress"><div><strong id="completion">已完成 0 / 13 项</strong><span id="issues" aria-live="polite">填写 10 个共用数值与 3 个描述。</span></div><span class="note">切换输入方式时，只使用当前显示的数据</span></div><form id="measurements" novalidate><section class="input-sheet"><div class="section-heading"><h2>共用测量数据</h2><p>整张表只需这一组原始数据，共用数值不重复填写。</p></div><div class="shared-grid"><div class="control"><label for="input-diameter-min">Minimum girdle diameter<span>最小腰围直径</span></label><div class="entry"><input id="input-diameter-min" name="diameter-min" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-diameter-min" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-diameter-min"></div></div><div class="control"><label for="input-diameter-max">Maximum girdle diameter<span>最大腰围直径</span></label><div class="entry"><input id="input-diameter-max" name="diameter-max" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-diameter-max" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-diameter-max"></div></div><div class="control"><label for="input-weight">Actual weight<span>实际重量</span></label><div class="entry"><input id="input-weight" name="weight" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-weight" placeholder="待输入"><span class="unit">ct</span></div><div class="error" id="error-weight"></div></div><div class="control"><label for="input-depth">Total depth<span>全深</span></label><div class="entry"><input id="input-depth" name="depth" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-depth" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-depth"></div></div><div class="shared-field table-measurement"><div data-panel="table:average"><div class="control"><label for="input-table">Average table width<span>平均台面宽度</span></label><div class="entry"><input id="input-table" name="table" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-table" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-table"></div></div></div><div data-panel="table:raw" hidden><label>Average table width<span>平均台面宽度</span></label><output class="average" id="average-table" aria-live="polite">等待完整测量</output><span class="hint">由四个方向的读数自动求平均</span></div><div class="table-actions"><button type="button" data-mode="table" data-option="raw" data-panel="table:average" aria-pressed="false" aria-controls="table-reading-panel">展开输入四个数</button><button type="button" data-mode="table" data-option="average" data-panel="table:raw" hidden aria-pressed="false">改为直接填写平均值</button></div><div id="table-reading-panel"><div data-panel="table:raw" class="raw-grid table-readings" hidden><div class="control"><label for="input-table-1">Measurement 1<span>第 1 次</span></label><div class="entry"><input id="input-table-1" name="table-1" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-table-1" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-table-1"></div></div><div class="control"><label for="input-table-2">Measurement 2<span>第 2 次</span></label><div class="entry"><input id="input-table-2" name="table-2" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-table-2" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-table-2"></div></div><div class="control"><label for="input-table-3">Measurement 3<span>第 3 次</span></label><div class="entry"><input id="input-table-3" name="table-3" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-table-3" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-table-3"></div></div><div class="control"><label for="input-table-4">Measurement 4<span>第 4 次</span></label><div class="entry"><input id="input-table-4" name="table-4" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-table-4" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-table-4"></div></div></div></div></div><div class="shared-field"><div data-panel="crown-angle:average"><div class="control"><label for="input-crown-angle">Average crown angle<span>平均冠角</span></label><div class="entry"><input id="input-crown-angle" name="crown-angle" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-crown-angle" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-crown-angle"></div></div></div><div data-panel="crown-angle:raw" hidden><label>Average crown angle<span>平均冠角</span></label><output class="average" id="average-crown-angle" aria-live="polite">等待完整测量</output><span class="hint">使用下方原始测量数据</span></div></div><div class="shared-field"><div data-panel="girdle:average"><div class="control"><label for="input-girdle">Average girdle thickness<span>平均腰厚</span></label><div class="entry"><input id="input-girdle" name="girdle" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-girdle" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-girdle"></div></div></div><div data-panel="girdle:raw" hidden><label>Average girdle thickness<span>平均腰厚</span></label><output class="average" id="average-girdle" aria-live="polite">等待完整测量</output><span class="hint">使用下方原始测量数据</span></div></div><div class="shared-field"><div data-panel="star:average"><div class="control"><label for="input-star">Star facet length<span>星刻面长度比</span></label><div class="entry"><input id="input-star" name="star" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-star" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-star"></div></div></div><div data-panel="star:raw" hidden><label>Star facet length<span>星刻面长度比</span></label><output class="average" id="average-star" aria-live="polite">等待完整测量</output><span class="hint">使用下方原始测量数据</span></div></div><div class="shared-field"><div data-panel="lower-half:average"><div class="control"><label for="input-lower-half">Lower half length<span>下腰刻面长度比</span></label><div class="entry"><input id="input-lower-half" name="lower-half" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-lower-half" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-lower-half"></div></div></div><div data-panel="lower-half:raw" hidden><label>Lower half length<span>下腰刻面长度比</span></label><output class="average" id="average-lower-half" aria-live="polite">等待完整测量</output><span class="hint">使用下方原始测量数据</span></div></div><div class="control"><label for="input-pavilion-depth">Pavilion depth<span>亭深比</span></label><div class="entry"><input id="input-pavilion-depth" name="pavilion-depth" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-pavilion-depth" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-pavilion-depth"></div></div></div><div class="description-explainer"><h3>腰围厚薄描述 <span>Girdle description</span></h3><p>腰围是钻石中间最宽的一圈，沿这一圈观察最薄和最厚的位置，选择“薄、中等、厚”等描述。两项组合后填写图中的 Description，例如 Thin to Medium（薄到中等），无需再输入两个尺寸。</p><p class="source-note">此处按补充 GIA 资料设置；当前 PPT 尚未包含腰厚分级细则，待课程续篇核对。</p></div><div class="description-row"><div class="control"><label for="input-girdle-min">Minimum girdle description<span>最薄位置的厚度描述</span></label><select id="input-girdle-min" name="girdle-min" aria-describedby="error-girdle-min"><option value="">请选择</option><option value="ETN">极薄 · Extremely Thin</option><option value="VTN">很薄 · Very Thin</option><option value="THN">薄 · Thin</option><option value="MED">中等 · Medium</option><option value="STK">稍厚 · Slightly Thick</option><option value="THK">厚 · Thick</option><option value="VTK">很厚 · Very Thick</option><option value="ETK">极厚 · Extremely Thick</option></select><div class="error" id="error-girdle-min"></div></div><div class="control"><label for="input-girdle-max">Maximum girdle description<span>最厚位置的厚度描述</span></label><select id="input-girdle-max" name="girdle-max" aria-describedby="error-girdle-max"><option value="">请选择</option><option value="ETN">极薄 · Extremely Thin</option><option value="VTN">很薄 · Very Thin</option><option value="THN">薄 · Thin</option><option value="MED">中等 · Medium</option><option value="STK">稍厚 · Slightly Thick</option><option value="THK">厚 · Thick</option><option value="VTK">很厚 · Very Thick</option><option value="ETK">极厚 · Extremely Thick</option></select><div class="error" id="error-girdle-max"></div></div><div class="control"><label for="input-culet">Culet size<span>底尖大小</span></label><select id="input-culet" name="culet" aria-describedby="error-culet"><option value="">请选择</option><option value="NON">无 · None</option><option value="VSM">很小 · Very Small</option><option value="SML">小 · Small</option><option value="MED">中等 · Medium</option><option value="SLG">稍大 · Slightly Large</option><option value="LRG">大 · Large</option><option value="VLG">很大 · Very Large</option><option value="ELG">极大 · Extremely Large</option></select><div class="error" id="error-culet"></div></div></div></section><div class="auto-note"><b>以下结果无需输入</b><p>平均直径、台宽比、冠高比、亭角、腰厚比、全深比、建议重量、超重比和各项 Grade，会在下方自动计算。</p></div><details class="optional"><summary>可选：原始测量与实测替代值 <span>有需要时再展开</span></summary><div class="optional-body"><div class="optional-row"><div><h3>平均冠角</h3><div class="switch" role="group" aria-label="crown-angle 输入方式"><button type="button" data-mode="crown-angle" data-option="average" aria-pressed="true">使用上方数值</button><button type="button" data-mode="crown-angle" data-option="raw" aria-pressed="false">填写 8 次测量</button></div></div><div data-panel="crown-angle:raw" class="raw-grid" hidden><div class="control"><label for="input-crown-angle-1">第 1 次<span>Measurement 1</span></label><div class="entry"><input id="input-crown-angle-1" name="crown-angle-1" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-crown-angle-1" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-crown-angle-1"></div></div><div class="control"><label for="input-crown-angle-2">第 2 次<span>Measurement 2</span></label><div class="entry"><input id="input-crown-angle-2" name="crown-angle-2" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-crown-angle-2" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-crown-angle-2"></div></div><div class="control"><label for="input-crown-angle-3">第 3 次<span>Measurement 3</span></label><div class="entry"><input id="input-crown-angle-3" name="crown-angle-3" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-crown-angle-3" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-crown-angle-3"></div></div><div class="control"><label for="input-crown-angle-4">第 4 次<span>Measurement 4</span></label><div class="entry"><input id="input-crown-angle-4" name="crown-angle-4" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-crown-angle-4" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-crown-angle-4"></div></div><div class="control"><label for="input-crown-angle-5">第 5 次<span>Measurement 5</span></label><div class="entry"><input id="input-crown-angle-5" name="crown-angle-5" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-crown-angle-5" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-crown-angle-5"></div></div><div class="control"><label for="input-crown-angle-6">第 6 次<span>Measurement 6</span></label><div class="entry"><input id="input-crown-angle-6" name="crown-angle-6" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-crown-angle-6" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-crown-angle-6"></div></div><div class="control"><label for="input-crown-angle-7">第 7 次<span>Measurement 7</span></label><div class="entry"><input id="input-crown-angle-7" name="crown-angle-7" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-crown-angle-7" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-crown-angle-7"></div></div><div class="control"><label for="input-crown-angle-8">第 8 次<span>Measurement 8</span></label><div class="entry"><input id="input-crown-angle-8" name="crown-angle-8" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-crown-angle-8" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-crown-angle-8"></div></div></div><p data-panel="crown-angle:average" class="hint">原始读数不是必填项，不会根据平均值编造。</p></div><div class="optional-row"><div><h3>平均腰厚</h3><div class="switch" role="group" aria-label="girdle 输入方式"><button type="button" data-mode="girdle" data-option="average" aria-pressed="true">使用上方数值</button><button type="button" data-mode="girdle" data-option="raw" aria-pressed="false">填写 8 次测量</button></div></div><div data-panel="girdle:raw" class="raw-grid" hidden><div class="control"><label for="input-girdle-1">第 1 次<span>Measurement 1</span></label><div class="entry"><input id="input-girdle-1" name="girdle-1" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-girdle-1" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-girdle-1"></div></div><div class="control"><label for="input-girdle-2">第 2 次<span>Measurement 2</span></label><div class="entry"><input id="input-girdle-2" name="girdle-2" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-girdle-2" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-girdle-2"></div></div><div class="control"><label for="input-girdle-3">第 3 次<span>Measurement 3</span></label><div class="entry"><input id="input-girdle-3" name="girdle-3" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-girdle-3" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-girdle-3"></div></div><div class="control"><label for="input-girdle-4">第 4 次<span>Measurement 4</span></label><div class="entry"><input id="input-girdle-4" name="girdle-4" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-girdle-4" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-girdle-4"></div></div><div class="control"><label for="input-girdle-5">第 5 次<span>Measurement 5</span></label><div class="entry"><input id="input-girdle-5" name="girdle-5" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-girdle-5" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-girdle-5"></div></div><div class="control"><label for="input-girdle-6">第 6 次<span>Measurement 6</span></label><div class="entry"><input id="input-girdle-6" name="girdle-6" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-girdle-6" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-girdle-6"></div></div><div class="control"><label for="input-girdle-7">第 7 次<span>Measurement 7</span></label><div class="entry"><input id="input-girdle-7" name="girdle-7" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-girdle-7" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-girdle-7"></div></div><div class="control"><label for="input-girdle-8">第 8 次<span>Measurement 8</span></label><div class="entry"><input id="input-girdle-8" name="girdle-8" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-girdle-8" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-girdle-8"></div></div></div><p data-panel="girdle:average" class="hint">原始读数不是必填项，不会根据平均值编造。</p></div><div class="optional-row"><div><h3>星刻面长度比</h3><div class="switch" role="group" aria-label="star 输入方式"><button type="button" data-mode="star" data-option="average" aria-pressed="true">使用上方数值</button><button type="button" data-mode="star" data-option="raw" aria-pressed="false">填写 8 次测量</button></div></div><div data-panel="star:raw" class="raw-grid" hidden><div class="control"><label for="input-star-1">第 1 次<span>Measurement 1</span></label><div class="entry"><input id="input-star-1" name="star-1" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-star-1" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-star-1"></div></div><div class="control"><label for="input-star-2">第 2 次<span>Measurement 2</span></label><div class="entry"><input id="input-star-2" name="star-2" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-star-2" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-star-2"></div></div><div class="control"><label for="input-star-3">第 3 次<span>Measurement 3</span></label><div class="entry"><input id="input-star-3" name="star-3" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-star-3" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-star-3"></div></div><div class="control"><label for="input-star-4">第 4 次<span>Measurement 4</span></label><div class="entry"><input id="input-star-4" name="star-4" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-star-4" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-star-4"></div></div><div class="control"><label for="input-star-5">第 5 次<span>Measurement 5</span></label><div class="entry"><input id="input-star-5" name="star-5" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-star-5" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-star-5"></div></div><div class="control"><label for="input-star-6">第 6 次<span>Measurement 6</span></label><div class="entry"><input id="input-star-6" name="star-6" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-star-6" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-star-6"></div></div><div class="control"><label for="input-star-7">第 7 次<span>Measurement 7</span></label><div class="entry"><input id="input-star-7" name="star-7" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-star-7" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-star-7"></div></div><div class="control"><label for="input-star-8">第 8 次<span>Measurement 8</span></label><div class="entry"><input id="input-star-8" name="star-8" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-star-8" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-star-8"></div></div></div><p data-panel="star:average" class="hint">原始读数不是必填项，不会根据平均值编造。</p></div><div class="optional-row"><div><h3>下腰刻面长度比</h3><div class="switch" role="group" aria-label="lower-half 输入方式"><button type="button" data-mode="lower-half" data-option="average" aria-pressed="true">使用上方数值</button><button type="button" data-mode="lower-half" data-option="raw" aria-pressed="false">填写 8 次测量</button></div></div><div data-panel="lower-half:raw" class="raw-grid" hidden><div class="control"><label for="input-lower-half-1">第 1 次<span>Measurement 1</span></label><div class="entry"><input id="input-lower-half-1" name="lower-half-1" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-lower-half-1" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-lower-half-1"></div></div><div class="control"><label for="input-lower-half-2">第 2 次<span>Measurement 2</span></label><div class="entry"><input id="input-lower-half-2" name="lower-half-2" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-lower-half-2" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-lower-half-2"></div></div><div class="control"><label for="input-lower-half-3">第 3 次<span>Measurement 3</span></label><div class="entry"><input id="input-lower-half-3" name="lower-half-3" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-lower-half-3" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-lower-half-3"></div></div><div class="control"><label for="input-lower-half-4">第 4 次<span>Measurement 4</span></label><div class="entry"><input id="input-lower-half-4" name="lower-half-4" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-lower-half-4" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-lower-half-4"></div></div><div class="control"><label for="input-lower-half-5">第 5 次<span>Measurement 5</span></label><div class="entry"><input id="input-lower-half-5" name="lower-half-5" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-lower-half-5" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-lower-half-5"></div></div><div class="control"><label for="input-lower-half-6">第 6 次<span>Measurement 6</span></label><div class="entry"><input id="input-lower-half-6" name="lower-half-6" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-lower-half-6" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-lower-half-6"></div></div><div class="control"><label for="input-lower-half-7">第 7 次<span>Measurement 7</span></label><div class="entry"><input id="input-lower-half-7" name="lower-half-7" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-lower-half-7" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-lower-half-7"></div></div><div class="control"><label for="input-lower-half-8">第 8 次<span>Measurement 8</span></label><div class="entry"><input id="input-lower-half-8" name="lower-half-8" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-lower-half-8" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-lower-half-8"></div></div></div><p data-panel="lower-half:average" class="hint">原始读数不是必填项，不会根据平均值编造。</p></div><div class="optional-row"><div><h3>平均冠高</h3><div class="switch" role="group" aria-label="crown-height 输入方式"><button type="button" data-mode="crown-height" data-option="lookup" aria-pressed="true">自动查表</button><button type="button" data-mode="crown-height" data-option="measured" aria-pressed="false">使用实测</button></div></div><div data-panel="crown-height:measured" hidden><div class="control"><label for="input-crown-height">平均冠高<span>Measured crown height</span></label><div class="entry"><input id="input-crown-height" name="crown-height" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-crown-height" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-crown-height"></div></div></div><p data-panel="crown-height:lookup" class="hint">由共用数据查表得到，无需另填。</p></div><div class="optional-row"><div><h3>平均亭角</h3><div class="switch" role="group" aria-label="pavilion-angle 输入方式"><button type="button" data-mode="pavilion-angle" data-option="lookup" aria-pressed="true">自动查表</button><button type="button" data-mode="pavilion-angle" data-option="measured" aria-pressed="false">使用实测</button></div></div><div data-panel="pavilion-angle:measured" hidden><div class="control"><label for="input-pavilion-angle">平均亭角<span>Measured pavilion angle</span></label><div class="entry"><input id="input-pavilion-angle" name="pavilion-angle" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-pavilion-angle" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-pavilion-angle"></div></div></div><p data-panel="pavilion-angle:lookup" class="hint">由共用数据查表得到，无需另填。</p></div></div></details></form><section class="calculations" aria-labelledby="calculation-heading"><div class="section-heading"><div><p class="eyebrow">CALCULATION &amp; GRADE</p><h2 id="calculation-heading">计算过程与单项评级</h2></div><p>按本项目两位小数规范评级。EX 极好 · VG 很好 · G 好 · F 一般 · P 差</p></div><p class="calculation-note">下列 Grade 表示单项允许达到的最高等级，不能作为整颗钻石的最终切工等级。内部计算保留精度，过程最多显示 6 位；数值评级统一保留两位小数后判断。区间采用本项目重新定义的规范，不作为课件或 GIA 官方等级结论。参考表仍按原表步长定位。</p><p id="result-status" aria-live="polite"></p><div id="results"></div></section><section class="worksheet"><div class="output-heading"><div><h2>比例图输出</h2><p>纯英文记录表 · 图上不输入</p></div><span>数值自动填写 · 查表估算及来源见上方计算过程</span></div><div class="paper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1619 971" role="img" aria-labelledby="title desc">
+</style><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M2 12L10 3H22L30 12L16 30Z' fill='%23177767'/%3E%3C/svg%3E"></head><body><main><header><div><p class="eyebrow">DIAMOND PROPORTIONS</p><h1>钻石比例工作表</h1><p class="subtitle">原始数据只填一次，供整张比例表共用。</p></div><span class="badge">输入 → 比例图 → 计算与评级</span></header><div class="progress"><div><strong id="completion">已完成 0 / 10 项</strong><span id="issues" aria-live="polite">填写 9 个共用数值与 1 个底尖描述。</span></div><span class="note">切换输入方式时，只使用当前显示的数据</span></div><form id="measurements" novalidate><section class="input-sheet"><div class="section-heading"><h2>共用测量数据</h2><p>整张表只需这一组原始数据，共用数值不重复填写。</p></div><div class="shared-grid"><div class="shared-field table-measurement"><div data-panel="diameter:average"><div class="control"><label for="input-diameter-average">Average girdle diameter<span>平均腰围直径</span></label><div class="entry"><input id="input-diameter-average" name="diameter-average" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-diameter-average" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-diameter-average"></div></div></div><div data-panel="diameter:raw" hidden><label>Average girdle diameter<span>平均腰围直径</span></label><output class="average" id="average-diameter" aria-live="polite">等待两个读数</output></div><div class="table-actions"><button type="button" data-mode="diameter" data-option="raw" data-panel="diameter:average" aria-controls="diameter-reading-panel">展开输入最小、最大直径</button><button type="button" data-mode="diameter" data-option="average" data-panel="diameter:raw" hidden>改为直接填写平均直径</button></div><div id="diameter-reading-panel" data-panel="diameter:raw" class="raw-grid table-readings" hidden><div class="control"><label for="input-diameter-min">Minimum girdle diameter<span>最小腰围直径</span></label><div class="entry"><input id="input-diameter-min" name="diameter-min" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-diameter-min" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-diameter-min"></div></div><div class="control"><label for="input-diameter-max">Maximum girdle diameter<span>最大腰围直径</span></label><div class="entry"><input id="input-diameter-max" name="diameter-max" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-diameter-max" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-diameter-max"></div></div></div></div><div class="control"><label for="input-weight">Actual weight<span>实际重量</span></label><div class="entry"><input id="input-weight" name="weight" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-weight" placeholder="待输入"><span class="unit">ct</span></div><div class="error" id="error-weight"></div></div><div class="control"><label for="input-depth">Total depth<span>全深</span></label><div class="entry"><input id="input-depth" name="depth" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-depth" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-depth"></div></div><div class="shared-field table-measurement"><div data-panel="table:average"><div class="control"><label for="input-table">Average table width<span>平均台面宽度</span></label><div class="entry"><input id="input-table" name="table" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-table" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-table"></div></div></div><div data-panel="table:raw" hidden><label>Average table width<span>平均台面宽度</span></label><output class="average" id="average-table" aria-live="polite">等待完整测量</output><span class="hint">由四个方向的读数自动求平均</span></div><div class="table-actions"><button type="button" data-mode="table" data-option="raw" data-panel="table:average" aria-pressed="false" aria-controls="table-reading-panel">展开输入四个数</button><button type="button" data-mode="table" data-option="average" data-panel="table:raw" hidden aria-pressed="false">改为直接填写平均值</button></div><div id="table-reading-panel"><div data-panel="table:raw" class="raw-grid table-readings" hidden><div class="control"><label for="input-table-1">Measurement 1<span>第 1 次</span></label><div class="entry"><input id="input-table-1" name="table-1" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-table-1" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-table-1"></div></div><div class="control"><label for="input-table-2">Measurement 2<span>第 2 次</span></label><div class="entry"><input id="input-table-2" name="table-2" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-table-2" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-table-2"></div></div><div class="control"><label for="input-table-3">Measurement 3<span>第 3 次</span></label><div class="entry"><input id="input-table-3" name="table-3" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-table-3" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-table-3"></div></div><div class="control"><label for="input-table-4">Measurement 4<span>第 4 次</span></label><div class="entry"><input id="input-table-4" name="table-4" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-table-4" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-table-4"></div></div></div></div></div><div class="shared-field"><div data-panel="crown-angle:average"><div class="control"><label for="input-crown-angle">Average crown angle<span>平均冠角</span></label><div class="entry"><input id="input-crown-angle" name="crown-angle" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-crown-angle" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-crown-angle"></div></div></div><div data-panel="crown-angle:raw" hidden><label>Average crown angle<span>平均冠角</span></label><output class="average" id="average-crown-angle" aria-live="polite">等待完整测量</output><span class="hint">使用下方原始测量数据</span></div></div><div class="shared-field"><div data-panel="girdle:average"><div class="control"><label for="input-girdle">Average girdle thickness<span>平均腰厚</span></label><div class="entry"><input id="input-girdle" name="girdle" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-girdle" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-girdle"></div><output class="linked-source hint" id="linked-girdle" aria-live="polite">可留空，由全深、冠高和另一项自动计算。</output><div class="switch girdle-units" role="group" aria-label="Girdle thickness unit"><button type="button" data-girdle-unit="mm" aria-pressed="true">mm</button><button type="button" data-girdle-unit="percent" aria-pressed="false">%</button></div><p class="hint" id="girdle-unit-hint" aria-live="polite">当前输入毫米值</p></div></div><div data-panel="girdle:raw" hidden><label>Average girdle thickness<span>平均腰厚</span></label><output class="average" id="average-girdle" aria-live="polite">等待完整测量</output><span class="hint">使用下方原始测量数据</span></div></div><div class="shared-field"><div data-panel="star:average"><div class="control"><label for="input-star">Star facet length<span>星刻面长度比</span></label><div class="entry"><input id="input-star" name="star" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-star" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-star"></div></div></div><div data-panel="star:raw" hidden><label>Star facet length<span>星刻面长度比</span></label><output class="average" id="average-star" aria-live="polite">等待完整测量</output><span class="hint">使用下方原始测量数据</span></div></div><div class="shared-field"><div data-panel="lower-half:average"><div class="control"><label for="input-lower-half">Lower half length<span>下腰刻面长度比</span></label><div class="entry"><input id="input-lower-half" name="lower-half" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-lower-half" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-lower-half"></div></div></div><div data-panel="lower-half:raw" hidden><label>Lower half length<span>下腰刻面长度比</span></label><output class="average" id="average-lower-half" aria-live="polite">等待完整测量</output><span class="hint">使用下方原始测量数据</span></div></div><div class="control"><label for="input-pavilion-depth">Pavilion depth<span>亭深比</span></label><div class="entry"><input id="input-pavilion-depth" name="pavilion-depth" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-pavilion-depth" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-pavilion-depth"></div><output class="linked-source hint" id="linked-pavilion-depth" aria-live="polite">可留空，由全深、冠高和另一项自动计算。</output></div></div><div class="description-explainer"><label>Girdle description<span>腰厚描述与评级方式</span></label><div class="switch" role="group" aria-label="Girdle description mode"><button type="button" data-mode="girdleDescription" data-option="auto" aria-pressed="true">自动计算</button><button type="button" data-mode="girdleDescription" data-option="manual" aria-pressed="false" aria-controls="girdle-description-panel">手动选择厚薄描述</button></div><p data-panel="girdleDescription:auto">默认按腰厚比评级，可从下方选择该 Grade 对应的 Description；取整后低于 2.5% 时 Grade 显示 N/A，可切换手动描述。</p><p data-panel="girdleDescription:manual" hidden>选择谷位最薄、最厚描述；低于 2.5% 按描述矩阵评级，其余与百分比等级取较低者。</p></div><div data-panel="girdleDescription:auto" class="description-row"><div class="control"><label for="input-girdle-auto-description">Girdle description<span>当前 Grade 对应的描述</span></label><select id="input-girdle-auto-description" name="girdle-auto-description" aria-describedby="girdle-auto-description-hint error-girdle-auto-description"><option value="">等待有效腰厚等级</option></select><p class="hint" id="girdle-auto-description-hint" aria-live="polite">有有效等级后显示可选描述。</p><div class="error" id="error-girdle-auto-description"></div></div></div><div id="girdle-description-panel" data-panel="girdleDescription:manual" class="description-row" hidden><div class="control"><label for="input-girdle-min">Minimum girdle description<span>最薄位置的厚度描述</span></label><select id="input-girdle-min" name="girdle-min" aria-describedby="error-girdle-min"><option value="">请选择</option><option value="ETN">极薄 · Extremely Thin</option><option value="VTN">很薄 · Very Thin</option><option value="THN">薄 · Thin</option><option value="MED">中等 · Medium</option><option value="STK">稍厚 · Slightly Thick</option><option value="THK">厚 · Thick</option><option value="VTK">很厚 · Very Thick</option><option value="ETK">极厚 · Extremely Thick</option></select><div class="error" id="error-girdle-min"></div></div><div class="control"><label for="input-girdle-max">Maximum girdle description<span>最厚位置的厚度描述</span></label><select id="input-girdle-max" name="girdle-max" aria-describedby="error-girdle-max"><option value="">请选择</option><option value="ETN">极薄 · Extremely Thin</option><option value="VTN">很薄 · Very Thin</option><option value="THN">薄 · Thin</option><option value="MED">中等 · Medium</option><option value="STK">稍厚 · Slightly Thick</option><option value="THK">厚 · Thick</option><option value="VTK">很厚 · Very Thick</option><option value="ETK">极厚 · Extremely Thick</option></select><div class="error" id="error-girdle-max"></div></div></div><div class="description-row"><div class="control"><label for="input-culet">Culet size<span>底尖大小</span></label><select id="input-culet" name="culet" aria-describedby="error-culet"><option value="">请选择</option><option value="NON">无 · None</option><option value="VSM">很小 · Very Small</option><option value="SML">小 · Small</option><option value="MED">中等 · Medium</option><option value="SLG">稍大 · Slightly Large</option><option value="LRG">大 · Large</option><option value="VLG">很大 · Very Large</option><option value="ELG">极大 · Extremely Large</option></select><div class="error" id="error-culet"></div></div></div></section><div class="auto-note"><b>以下结果无需输入</b><p>腰厚 Description 默认自动推荐，也可切换手动选择厚薄描述。平均直径、台宽比、冠高比、亭角、腰厚比、全深比、建议重量、超重比和各项 Grade，会自动计算。腰厚与亭深可只填一项，另一项由全深和冠高自动推算；两项都填时保留手动值。</p></div><details class="optional"><summary>可选：原始测量与实测替代值 <span>有需要时再展开</span></summary><div class="optional-body"><div class="optional-row"><div><h3>平均冠角</h3><div class="switch" role="group" aria-label="crown-angle 输入方式"><button type="button" data-mode="crown-angle" data-option="average" aria-pressed="true">使用上方数值</button><button type="button" data-mode="crown-angle" data-option="raw" aria-pressed="false">填写 8 次测量</button></div></div><div data-panel="crown-angle:raw" class="raw-grid" hidden><div class="control"><label for="input-crown-angle-1">第 1 次<span>Measurement 1</span></label><div class="entry"><input id="input-crown-angle-1" name="crown-angle-1" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-crown-angle-1" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-crown-angle-1"></div></div><div class="control"><label for="input-crown-angle-2">第 2 次<span>Measurement 2</span></label><div class="entry"><input id="input-crown-angle-2" name="crown-angle-2" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-crown-angle-2" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-crown-angle-2"></div></div><div class="control"><label for="input-crown-angle-3">第 3 次<span>Measurement 3</span></label><div class="entry"><input id="input-crown-angle-3" name="crown-angle-3" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-crown-angle-3" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-crown-angle-3"></div></div><div class="control"><label for="input-crown-angle-4">第 4 次<span>Measurement 4</span></label><div class="entry"><input id="input-crown-angle-4" name="crown-angle-4" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-crown-angle-4" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-crown-angle-4"></div></div><div class="control"><label for="input-crown-angle-5">第 5 次<span>Measurement 5</span></label><div class="entry"><input id="input-crown-angle-5" name="crown-angle-5" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-crown-angle-5" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-crown-angle-5"></div></div><div class="control"><label for="input-crown-angle-6">第 6 次<span>Measurement 6</span></label><div class="entry"><input id="input-crown-angle-6" name="crown-angle-6" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-crown-angle-6" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-crown-angle-6"></div></div><div class="control"><label for="input-crown-angle-7">第 7 次<span>Measurement 7</span></label><div class="entry"><input id="input-crown-angle-7" name="crown-angle-7" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-crown-angle-7" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-crown-angle-7"></div></div><div class="control"><label for="input-crown-angle-8">第 8 次<span>Measurement 8</span></label><div class="entry"><input id="input-crown-angle-8" name="crown-angle-8" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-crown-angle-8" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-crown-angle-8"></div></div></div><p data-panel="crown-angle:average" class="hint">原始读数不是必填项，不会根据平均值编造。</p></div><div class="optional-row"><div><h3>平均腰厚</h3><div class="switch" role="group" aria-label="girdle 输入方式"><button type="button" data-mode="girdle" data-option="average" aria-pressed="true">使用上方数值</button><button type="button" data-mode="girdle" data-option="raw" aria-pressed="false">填写 8 次测量</button></div></div><div data-panel="girdle:raw" class="raw-grid" hidden><div class="control"><label for="input-girdle-1">第 1 次<span>Measurement 1</span></label><div class="entry"><input id="input-girdle-1" name="girdle-1" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-girdle-1" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-girdle-1"></div></div><div class="control"><label for="input-girdle-2">第 2 次<span>Measurement 2</span></label><div class="entry"><input id="input-girdle-2" name="girdle-2" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-girdle-2" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-girdle-2"></div></div><div class="control"><label for="input-girdle-3">第 3 次<span>Measurement 3</span></label><div class="entry"><input id="input-girdle-3" name="girdle-3" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-girdle-3" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-girdle-3"></div></div><div class="control"><label for="input-girdle-4">第 4 次<span>Measurement 4</span></label><div class="entry"><input id="input-girdle-4" name="girdle-4" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-girdle-4" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-girdle-4"></div></div><div class="control"><label for="input-girdle-5">第 5 次<span>Measurement 5</span></label><div class="entry"><input id="input-girdle-5" name="girdle-5" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-girdle-5" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-girdle-5"></div></div><div class="control"><label for="input-girdle-6">第 6 次<span>Measurement 6</span></label><div class="entry"><input id="input-girdle-6" name="girdle-6" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-girdle-6" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-girdle-6"></div></div><div class="control"><label for="input-girdle-7">第 7 次<span>Measurement 7</span></label><div class="entry"><input id="input-girdle-7" name="girdle-7" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-girdle-7" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-girdle-7"></div></div><div class="control"><label for="input-girdle-8">第 8 次<span>Measurement 8</span></label><div class="entry"><input id="input-girdle-8" name="girdle-8" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-girdle-8" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-girdle-8"></div></div></div><p data-panel="girdle:average" class="hint">原始读数不是必填项，不会根据平均值编造。</p></div><div class="optional-row"><div><h3>星刻面长度比</h3><div class="switch" role="group" aria-label="star 输入方式"><button type="button" data-mode="star" data-option="average" aria-pressed="true">使用上方数值</button><button type="button" data-mode="star" data-option="raw" aria-pressed="false">填写 8 次测量</button></div></div><div data-panel="star:raw" class="raw-grid" hidden><div class="control"><label for="input-star-1">第 1 次<span>Measurement 1</span></label><div class="entry"><input id="input-star-1" name="star-1" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-star-1" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-star-1"></div></div><div class="control"><label for="input-star-2">第 2 次<span>Measurement 2</span></label><div class="entry"><input id="input-star-2" name="star-2" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-star-2" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-star-2"></div></div><div class="control"><label for="input-star-3">第 3 次<span>Measurement 3</span></label><div class="entry"><input id="input-star-3" name="star-3" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-star-3" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-star-3"></div></div><div class="control"><label for="input-star-4">第 4 次<span>Measurement 4</span></label><div class="entry"><input id="input-star-4" name="star-4" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-star-4" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-star-4"></div></div><div class="control"><label for="input-star-5">第 5 次<span>Measurement 5</span></label><div class="entry"><input id="input-star-5" name="star-5" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-star-5" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-star-5"></div></div><div class="control"><label for="input-star-6">第 6 次<span>Measurement 6</span></label><div class="entry"><input id="input-star-6" name="star-6" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-star-6" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-star-6"></div></div><div class="control"><label for="input-star-7">第 7 次<span>Measurement 7</span></label><div class="entry"><input id="input-star-7" name="star-7" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-star-7" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-star-7"></div></div><div class="control"><label for="input-star-8">第 8 次<span>Measurement 8</span></label><div class="entry"><input id="input-star-8" name="star-8" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-star-8" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-star-8"></div></div></div><p data-panel="star:average" class="hint">原始读数不是必填项，不会根据平均值编造。</p></div><div class="optional-row"><div><h3>下腰刻面长度比</h3><div class="switch" role="group" aria-label="lower-half 输入方式"><button type="button" data-mode="lower-half" data-option="average" aria-pressed="true">使用上方数值</button><button type="button" data-mode="lower-half" data-option="raw" aria-pressed="false">填写 8 次测量</button></div></div><div data-panel="lower-half:raw" class="raw-grid" hidden><div class="control"><label for="input-lower-half-1">第 1 次<span>Measurement 1</span></label><div class="entry"><input id="input-lower-half-1" name="lower-half-1" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-lower-half-1" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-lower-half-1"></div></div><div class="control"><label for="input-lower-half-2">第 2 次<span>Measurement 2</span></label><div class="entry"><input id="input-lower-half-2" name="lower-half-2" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-lower-half-2" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-lower-half-2"></div></div><div class="control"><label for="input-lower-half-3">第 3 次<span>Measurement 3</span></label><div class="entry"><input id="input-lower-half-3" name="lower-half-3" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-lower-half-3" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-lower-half-3"></div></div><div class="control"><label for="input-lower-half-4">第 4 次<span>Measurement 4</span></label><div class="entry"><input id="input-lower-half-4" name="lower-half-4" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-lower-half-4" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-lower-half-4"></div></div><div class="control"><label for="input-lower-half-5">第 5 次<span>Measurement 5</span></label><div class="entry"><input id="input-lower-half-5" name="lower-half-5" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-lower-half-5" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-lower-half-5"></div></div><div class="control"><label for="input-lower-half-6">第 6 次<span>Measurement 6</span></label><div class="entry"><input id="input-lower-half-6" name="lower-half-6" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-lower-half-6" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-lower-half-6"></div></div><div class="control"><label for="input-lower-half-7">第 7 次<span>Measurement 7</span></label><div class="entry"><input id="input-lower-half-7" name="lower-half-7" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-lower-half-7" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-lower-half-7"></div></div><div class="control"><label for="input-lower-half-8">第 8 次<span>Measurement 8</span></label><div class="entry"><input id="input-lower-half-8" name="lower-half-8" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="percent" aria-describedby="error-lower-half-8" placeholder="待输入"><span class="unit">%</span></div><div class="error" id="error-lower-half-8"></div></div></div><p data-panel="lower-half:average" class="hint">原始读数不是必填项，不会根据平均值编造。</p></div><div class="optional-row"><div><h3>平均冠高</h3><div class="switch" role="group" aria-label="crown-height 输入方式"><button type="button" data-mode="crown-height" data-option="lookup" aria-pressed="true">自动查表</button><button type="button" data-mode="crown-height" data-option="measured" aria-pressed="false">使用实测</button></div></div><div data-panel="crown-height:measured" hidden><div class="control"><label for="input-crown-height">平均冠高<span>Measured crown height</span></label><div class="entry"><input id="input-crown-height" name="crown-height" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="positive" aria-describedby="error-crown-height" placeholder="待输入"><span class="unit">mm</span></div><div class="error" id="error-crown-height"></div></div></div><p data-panel="crown-height:lookup" class="hint">由共用数据查表得到，无需另填。</p></div><div class="optional-row"><div><h3>平均亭角</h3><div class="switch" role="group" aria-label="pavilion-angle 输入方式"><button type="button" data-mode="pavilion-angle" data-option="lookup" aria-pressed="true">自动查表</button><button type="button" data-mode="pavilion-angle" data-option="measured" aria-pressed="false">使用实测</button></div></div><div data-panel="pavilion-angle:measured" hidden><div class="control"><label for="input-pavilion-angle">平均亭角<span>Measured pavilion angle</span></label><div class="entry"><input id="input-pavilion-angle" name="pavilion-angle" type="text" inputmode="decimal" pattern="[0-9]*[.]?[0-9]*" enterkeyhint="next" autocapitalize="off" autocorrect="off" spellcheck="false" autocomplete="off" data-kind="angle" aria-describedby="error-pavilion-angle" placeholder="待输入"><span class="unit">°</span></div><div class="error" id="error-pavilion-angle"></div></div></div><p data-panel="pavilion-angle:lookup" class="hint">由共用数据查表得到，无需另填。</p></div></div></details></form><section class="worksheet"><div class="output-heading"><div><h2>比例图输出</h2><p>纯英文记录表 · 图上不输入</p></div><span>数值自动填写 · 查表估算及来源见下方计算过程</span></div><p class="linked-output-note" id="linked-output-note" aria-live="polite"></p><div class="paper"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1619 971" role="img" aria-labelledby="title desc">
 <title id="title">Diamond Proportions Worksheet</title><desc id="desc">English diamond proportions worksheet with twelve original-layout boxes and blank output fields.</desc>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111;font-size:20px}.line{fill:none;stroke:#111;stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round}.fine{fill:none;stroke:#111;stroke-width:1.6}.label{font-size:18px;paint-order:stroke;stroke:#fff;stroke-width:5px;stroke-linejoin:round}.output{font-size:19px;text-anchor:middle;font-variant-numeric:tabular-nums}.blank{stroke:#111;stroke-width:1.6}.checkbox{fill:white;stroke:#111;stroke-width:2.5}</style>
 <rect width="1619" height="971" fill="white"/>
@@ -55,6 +60,7 @@
 <text x="373" y="72">mm)÷2 =</text>
 <line class="blank" x1="467" y1="77" x2="540" y2="77"/><text id="diameter-average" data-value="diameter-average" class="output" x="503.5" y="72"></text>
 <text x="544" y="72">mm</text>
+<a class="worksheet-jump" href="#result-diameter" aria-label="View diameter calculation" tabindex="0"><title>View calculation and grade</title><rect x="593" y="68" width="30" height="26" fill="transparent"/><path d="M604 82H614 M610 78L614 82L610 86"/></a>
 </g>
 <g id="field-table" data-field="table">
 <path class="line" d="M44 130H624V235H44Z"/>
@@ -72,12 +78,14 @@
 <line class="blank" x1="226" y1="217" x2="300" y2="217"/><text id="table-percent" data-value="table-percent" class="output" x="263.0" y="212"></text>
 <text x="308" y="212">% = Grade</text>
 <line class="blank" x1="418" y1="217" x2="524" y2="217"/><text id="table-grade" data-value="table-grade" class="output" x="471.0" y="212"></text>
+<a class="worksheet-jump" href="#result-table" aria-label="View table calculation" tabindex="0"><title>View calculation and grade</title><rect x="594" y="209" width="30" height="26" fill="transparent"/><path d="M605 223H615 M611 219L615 223L611 227"/></a>
 </g>
 <g id="field-crown-angle" data-field="crown-angle">
 <path class="line" d="M108 309H425V373H108Z"/>
 <line class="blank" x1="132" y1="351" x2="205" y2="351"/><text id="crown-angle-value" data-value="crown-angle-value" class="output" x="168.5" y="345"></text>
 <text x="206" y="345">° = Grade</text>
 <line class="blank" x1="305" y1="351" x2="394" y2="351"/><text id="crown-angle-grade" data-value="crown-angle-grade" class="output" x="349.5" y="345"></text>
+<a class="worksheet-jump" href="#result-crown-angle" aria-label="View crown angle calculation" tabindex="0"><title>View calculation and grade</title><rect x="395" y="347" width="30" height="26" fill="transparent"/><path d="M406 361H416 M412 357L416 361L412 365"/></a>
 </g>
 <g id="field-girdle" data-field="girdle">
 <path class="line" d="M54 402H313V538H54Z"/>
@@ -88,12 +96,14 @@
 <text x="280" y="477">=</text>
 <text x="73" y="516">Grade</text>
 <line class="blank" x1="136" y1="518" x2="223" y2="518"/><text id="girdle-grade" data-value="girdle-grade" class="output" x="179.5" y="513"></text>
+<a class="worksheet-jump" href="#result-girdle" aria-label="View girdle calculation" tabindex="0"><title>View calculation and grade</title><rect x="283" y="512" width="30" height="26" fill="transparent"/><path d="M294 526H304 M300 522L304 526L300 530"/></a>
 </g>
 <g id="field-pavilion-angle" data-field="pavilion-angle">
 <path class="line" d="M139 598H428V663H139Z"/>
 <line class="blank" x1="161" y1="643" x2="233" y2="643"/><text id="pavilion-angle-value" data-value="pavilion-angle-value" class="output" x="197.0" y="638"></text>
 <text x="235" y="637">° = Grade</text>
 <line class="blank" x1="332" y1="641" x2="405" y2="641"/><text id="pavilion-angle-grade" data-value="pavilion-angle-grade" class="output" x="368.5" y="636"></text>
+<a class="worksheet-jump" href="#result-pavilion-angle" aria-label="View pavilion angle calculation" tabindex="0"><title>View calculation and grade</title><rect x="398" y="637" width="30" height="26" fill="transparent"/><path d="M409 651H419 M415 647L419 651L415 655"/></a>
 </g>
 <g id="field-culet" data-field="culet">
 <path class="line" d="M276 756H707V823H276Z"/>
@@ -101,6 +111,7 @@
 <line class="blank" x1="402" y1="800" x2="483" y2="800"/><text id="culet-description" data-value="culet-description" class="output" x="442.5" y="795"></text>
 <text x="487" y="798">= Grade</text>
 <line class="blank" x1="576" y1="800" x2="677" y2="800"/><text id="culet-grade" data-value="culet-grade" class="output" x="626.5" y="795"></text>
+<a class="worksheet-jump" href="#result-culet" aria-label="View culet calculation" tabindex="0"><title>View calculation and grade</title><rect x="677" y="797" width="30" height="26" fill="transparent"/><path d="M688 811H698 M694 807L698 811L694 815"/></a>
 </g>
 <g id="field-overweight" data-field="overweight">
 <path class="line" stroke-dasharray="1 5" d="M817 50H788V122H1288V50H1106"/>
@@ -110,6 +121,7 @@
 <line class="blank" x1="980" y1="96" x2="1054" y2="96"/><text id="overweight-percent" data-value="overweight-percent" class="output" x="1017.0" y="91"></text>
 <text x="1060" y="94">% = Grade</text>
 <line class="blank" x1="1166" y1="96" x2="1257" y2="96"/><text id="overweight-grade" data-value="overweight-grade" class="output" x="1211.5" y="91"></text>
+<a class="worksheet-jump" href="#result-overweight" aria-label="View overweight calculation" tabindex="0"><title>View calculation and grade</title><rect x="1258" y="96" width="30" height="26" fill="transparent"/><path d="M1269 110H1279 M1275 106L1279 110L1275 114"/></a>
 </g>
 <g id="field-star" data-field="star">
 <path class="line" d="M1188 192H1179V251H1531V192"/>
@@ -117,12 +129,14 @@
 <line class="blank" x1="1204" y1="232" x2="1291" y2="232"/><text id="star-percent" data-value="star-percent" class="output" x="1247.5" y="227"></text>
 <text x="1295" y="229">% = Grade</text>
 <line class="blank" x1="1409" y1="232" x2="1497" y2="232"/><text id="star-grade" data-value="star-grade" class="output" x="1453.0" y="227"></text>
+<a class="worksheet-jump" href="#result-star" aria-label="View star calculation" tabindex="0"><title>View calculation and grade</title><rect x="1501" y="225" width="30" height="26" fill="transparent"/><path d="M1512 239H1522 M1518 235L1522 239L1518 243"/></a>
 </g>
 <g id="field-crown-height" data-field="crown-height">
 <path class="line" d="M1180 292H1532V354H1180Z"/>
 <line class="blank" x1="1204" y1="337" x2="1291" y2="337"/><text id="crown-height-percent" data-value="crown-height-percent" class="output" x="1247.5" y="332"></text>
 <text x="1295" y="333">% = Grade</text>
 <line class="blank" x1="1409" y1="337" x2="1497" y2="337"/><text id="crown-height-grade" data-value="crown-height-grade" class="output" x="1453.0" y="332"></text>
+<a class="worksheet-jump" href="#result-crown-height" aria-label="View crown height calculation" tabindex="0"><title>View calculation and grade</title><rect x="1502" y="328" width="30" height="26" fill="transparent"/><path d="M1513 342H1523 M1519 338L1523 342L1519 346"/></a>
 </g>
 <g id="field-depth" data-field="depth">
 <path class="line" d="M1308 577H1554V718H1308Z"/>
@@ -132,11 +146,13 @@
 <text x="1419" y="658">% =</text>
 <text x="1329" y="694">Grade</text>
 <line class="blank" x1="1394" y1="697" x2="1517" y2="697"/><text id="depth-grade" data-value="depth-grade" class="output" x="1455.5" y="692"></text>
+<a class="worksheet-jump" href="#result-depth" aria-label="View depth calculation" tabindex="0"><title>View calculation and grade</title><rect x="1524" y="692" width="30" height="26" fill="transparent"/><path d="M1535 706H1545 M1541 702L1545 706L1541 710"/></a>
 </g>
 <g id="field-pavilion-depth" data-field="pavilion-depth">
 <path class="line" d="M1132 742H1372V803H1132Z"/>
 <line class="blank" x1="1152" y1="784" x2="1238" y2="784"/><text id="pavilion-depth-percent" data-value="pavilion-depth-percent" class="output" x="1195.0" y="779"></text>
 <text x="1245" y="780">%</text>
+<a class="worksheet-jump" href="#result-pavilion-depth" aria-label="View pavilion depth calculation" tabindex="0"><title>View calculation and grade</title><rect x="1342" y="777" width="30" height="26" fill="transparent"/><path d="M1353 791H1363 M1359 787L1363 791L1359 795"/></a>
 </g>
 <g id="field-lower-half" data-field="lower-half">
 <path class="line" d="M972 885H1310V943H972Z"/>
@@ -144,6 +160,7 @@
 <line class="blank" x1="995" y1="925" x2="1070" y2="925"/><text id="lower-half-percent" data-value="lower-half-percent" class="output" x="1032.5" y="920"></text>
 <text x="1078" y="922">% = Grade</text>
 <line class="blank" x1="1184" y1="925" x2="1274" y2="925"/><text id="lower-half-grade" data-value="lower-half-grade" class="output" x="1229.0" y="920"></text>
+<a class="worksheet-jump" href="#result-lower-half" aria-label="View lower half calculation" tabindex="0"><title>View calculation and grade</title><rect x="1280" y="917" width="30" height="26" fill="transparent"/><path d="M1291 931H1301 M1297 927L1301 931L1297 935"/></a>
 </g>
 <g id="leader-diameter">
 <path class="line" d="M623 33H660L742 217"/>
@@ -201,11 +218,11 @@
 <text x="1204" y="531" class="label">Total Depth</text>
 <text x="1000" y="580" class="label">Pavilion Depth</text>
 <text x="786" y="722" class="label">Culet</text>
-</svg></div></section><footer>数据仅在当前页面使用，刷新页面后不会保留。</footer></main><script>
+</svg></div></section><section class="calculations" aria-labelledby="calculation-heading"><div class="section-heading"><div><p class="eyebrow">CALCULATION &amp; GRADE</p><h2 id="calculation-heading">计算过程与单项评级</h2></div><p>按课件规定取整后评级。EX 极好 · VG 很好 · G 好 · F 一般 · P 差</p></div><p class="calculation-note">下列 Grade 表示单项允许达到的最高等级，不能作为整颗钻石的最终切工等级。内部计算保留原始精度，过程最多显示 6 位；右侧及比例图显示两位小数。Grade 与色带使用课件规定步长取整后的数值，评级值在右侧下方单独说明。</p><p id="result-status" aria-live="polite"></p><div id="results"></div></section><footer>数据仅在当前页面使用，刷新页面后不会保留。</footer></main><script>
 /* Lookup values transcribed from supplied IMG_7305–7308; grades from 过程.md. */
 (function(root){
 const data={
-  "version": "project-decimal-2026-10-09",
+  "version": "course-2026-10-18",
   "crown": [
     [
       9.5,
@@ -1265,6 +1282,13 @@ const data={
       44.4
     ]
   ],
+  "girdleAutoDescriptions": {
+    "EX": "MED",
+    "VG": "THK",
+    "G": "VTK",
+    "F": "ETK",
+    "P": "ETK"
+  },
   "girdleCodes": [
     "ETN",
     "VTN",
@@ -1402,302 +1426,6 @@ const data={
     ]
   },
   "rules": {
-    "table": {
-      "step": 0.01,
-      "ranges": [
-        [
-          "EX",
-          51.5,
-          62.49
-        ],
-        [
-          "VG",
-          49.5,
-          51.49
-        ],
-        [
-          "VG",
-          62.5,
-          66.49
-        ],
-        [
-          "G",
-          46.5,
-          49.49
-        ],
-        [
-          "G",
-          66.5,
-          69.49
-        ],
-        [
-          "F",
-          43.5,
-          46.49
-        ],
-        [
-          "F",
-          69.5,
-          72.49
-        ]
-      ],
-      "fallback": "P"
-    },
-    "crown-angle": {
-      "step": 0.01,
-      "ranges": [
-        [
-          "EX",
-          31.25,
-          36.74
-        ],
-        [
-          "VG",
-          26.25,
-          31.24
-        ],
-        [
-          "VG",
-          36.75,
-          38.74
-        ],
-        [
-          "G",
-          21.75,
-          26.24
-        ],
-        [
-          "G",
-          38.75,
-          40.24
-        ],
-        [
-          "F",
-          19.75,
-          21.74
-        ],
-        [
-          "F",
-          40.25,
-          41.74
-        ]
-      ],
-      "fallback": "P"
-    },
-    "girdle": {
-      "step": 0.01,
-      "ranges": [
-        [
-          "EX",
-          2.5,
-          4.74
-        ],
-        [
-          "VG",
-          4.75,
-          5.74
-        ],
-        [
-          "G",
-          5.75,
-          7.74
-        ],
-        [
-          "F",
-          7.75,
-          10.74
-        ]
-      ],
-      "fallback": "P"
-    },
-    "pavilion-angle": {
-      "step": 0.01,
-      "ranges": [
-        [
-          "EX",
-          40.5,
-          41.89
-        ],
-        [
-          "VG",
-          39.7,
-          40.49
-        ],
-        [
-          "VG",
-          41.9,
-          42.49
-        ],
-        [
-          "G",
-          38.7,
-          39.69
-        ],
-        [
-          "G",
-          42.5,
-          43.09
-        ],
-        [
-          "F",
-          37.3,
-          38.69
-        ],
-        [
-          "F",
-          43.1,
-          44.09
-        ]
-      ],
-      "fallback": "P"
-    },
-    "overweight": {
-      "step": 0.01,
-      "ranges": [
-        [
-          "EX",
-          0,
-          7.99
-        ],
-        [
-          "VG",
-          8,
-          16.99
-        ],
-        [
-          "G",
-          17,
-          25
-        ]
-      ],
-      "fallback": "F"
-    },
-    "star": {
-      "step": 0.01,
-      "ranges": [
-        [
-          "EX",
-          42.5,
-          67.49
-        ],
-        [
-          "VG",
-          37.5,
-          42.49
-        ],
-        [
-          "VG",
-          67.5,
-          72.49
-        ]
-      ],
-      "fallback": "G"
-    },
-    "crown-height": {
-      "step": 0.01,
-      "ranges": [
-        [
-          "EX",
-          12.25,
-          17.24
-        ],
-        [
-          "VG",
-          10.25,
-          12.24
-        ],
-        [
-          "VG",
-          17.25,
-          18.24
-        ],
-        [
-          "G",
-          8.75,
-          10.24
-        ],
-        [
-          "G",
-          18.25,
-          19.74
-        ],
-        [
-          "F",
-          6.75,
-          8.74
-        ],
-        [
-          "F",
-          19.75,
-          21.24
-        ]
-      ],
-      "fallback": "P"
-    },
-    "depth": {
-      "step": 0.01,
-      "ranges": [
-        [
-          "EX",
-          57.45,
-          63.04
-        ],
-        [
-          "VG",
-          55.95,
-          57.44
-        ],
-        [
-          "VG",
-          63.05,
-          64.54
-        ],
-        [
-          "G",
-          52.95,
-          55.94
-        ],
-        [
-          "G",
-          64.55,
-          66.54
-        ],
-        [
-          "F",
-          50.95,
-          52.94
-        ],
-        [
-          "F",
-          66.55,
-          70.94
-        ]
-      ],
-      "fallback": "P"
-    },
-    "lower-half": {
-      "step": 0.01,
-      "ranges": [
-        [
-          "EX",
-          67.5,
-          87.49
-        ],
-        [
-          "VG",
-          62.5,
-          67.49
-        ],
-        [
-          "VG",
-          87.5,
-          92.49
-        ]
-      ],
-      "fallback": "G"
-    }
-  },
-  "courseRules": {
     "table": {
       "step": 1,
       "ranges": [
@@ -2021,35 +1749,41 @@ const items=[
  ['diameter','腰围直径','Girdle Diameter','mm',.01,'平均腰围直径（mm）＝［最小腰围直径（mm）＋最大腰围直径（mm）］÷ 2。','课件第 86 页。'],
  ['table','台面宽度','Table Length','%',1,'平均台面宽度（mm）＝四个方向台面宽度之和（mm）÷ 4；台宽比＝平均台面宽度（mm）÷ 平均腰围直径（mm）× 100%。','课件第 94–97 页；等级见《过程.md》。'],
  ['crown-angle','冠角','Crown Angle','°',.5,'平均冠角（°）＝8 个冠部主刻面的冠角测量值之和（°）÷ 8。','课件第 123、134–135 页。'],
- ['girdle','腰厚','Girdle Thickness','%',.5,'腰厚比＝平均腰厚（mm）÷ 平均腰围直径（mm）× 100%。','GIA 参考内容，尚未按课程续篇核实。'],
- ['pavilion-angle','亭角','Pavilion Angle','°',.2,'实测平均亭角（°）＝8 个亭部主刻面的亭角测量值之和（°）÷ 8；默认由亭深比查近似换算表。','换算：IMG_7308；等级：GIA 参考内容，尚未按课程续篇核实。'],
- ['culet','底尖','Culet','',null,'根据底尖大小的英文描述查 Grade。','GIA 参考内容，尚未按课程续篇核实。'],
+ ['girdle','腰厚','Girdle Thickness','%',.5,'腰厚比＝平均腰厚（mm）÷ 平均腰围直径（mm）× 100%。','数值区间参考续篇课件第 4 页，取到 0.5%；默认按百分比评级，低于 2.5% 的 Grade 为 N/A；可切换手动描述，结合续篇第 16 页矩阵评级。'],
+ ['pavilion-angle','亭角','Pavilion Angle','°',.2,'实测平均亭角（°）＝8 个亭部主刻面的亭角测量值之和（°）÷ 8；默认由亭深比查近似换算表。','换算：IMG_7308；亭角取整及等级已按续篇课件第 47、51–52 页核实。'],
+ ['culet','底尖','Culet','',null,'根据底尖大小的英文描述查 Grade。','续篇课件第 59、66、70 页，已核实。'],
  ['overweight','超重','Overweight Percentage','%',1,'超重比＝［实际重量（ct）－建议重量（ct）］÷ 建议重量（ct）× 100%。','课件第 21–24 页（8% 分界）；重量表：IMG_7305。'],
  ['star','星刻面','Star Facet Length Percentage','%',5,'平均星刻面长度比＝8 个星刻面各自的长度比之和 ÷ 8。单个长度比＝台面边缘至星刻面尖端的水平投影距离（mm）÷ 同一测线上的台面边缘至腰围边缘的水平投影距离（mm）× 100%。','课件第 116–120 页。'],
  ['crown-height','冠高','Crown Height','%',.5,'实测冠高比＝平均冠部垂直高度（mm）÷ 平均腰围直径（mm）× 100%；默认由台宽比行与冠角列查冠高表。','课件第 136、140–141 页；完整换算表：IMG_7306、IMG_7307。'],
  ['depth','全深','Total Depth','%',.1,'全深比＝台面到底尖的总垂直高度（mm）÷ 平均腰围直径（mm）× 100%。','课件第 87、91–92 页。'],
- ['pavilion-depth','亭深','Pavilion Depth','%',.5,'亭深比＝亭部垂直深度（mm）÷ 平均腰围直径（mm）× 100%。本页直接填写已测得的亭深比。','IMG_7308 近似换算表；此框无 Grade。'],
- ['lower-half','下腰刻面','Lower Girdle Facet Length Percentage','%',5,'平均下腰刻面长度比＝8 组下腰刻面各自的长度比之和 ÷ 8。单组长度比＝腰围边缘至下腰刻面内侧尖端的水平投影距离（mm）÷ 对应腰围边缘至底尖中心的水平投影距离（mm）× 100%。','GIA 参考内容，尚未按课程续篇核实。']
+ ['pavilion-depth','亭深','Pavilion Depth','%',.5,'亭深比＝亭部垂直深度（mm）÷ 平均腰围直径（mm）× 100%。可手动填写，也可由全深比－冠高比－腰厚比自动计算。','IMG_7308 近似换算表；此框无 Grade。'],
+ ['lower-half','下腰刻面','Lower Girdle Facet Length Percentage','%',5,'平均下腰刻面长度比＝8 组下腰刻面各自的长度比之和 ÷ 8。单组长度比＝腰围边缘至下腰刻面内侧尖端的水平投影距离（mm）÷ 对应腰围边缘至底尖中心的水平投影距离（mm）× 100%。','续篇课件第 53、57 页，已核实。']
 ];
 function calculate(state={}){
  const v={...(state.values||{})},sources=state.sources||{},errors={...(state.errors||{})};
+ const manualDescription=sources.girdleDescription==='manual';
+ if(!manualDescription)for(const key of ['girdle-min','girdle-max']){delete v[key];delete errors[key];}
+ const percentGirdle=sources.girdleUnit==='percent'&&sources.girdle!=='raw';
+ const directDiameter=sources.diameter==='average';
+ for(const key of directDiameter?['diameter-min','diameter-max']:['diameter-average']){v[key]=null;delete errors[key];}
  // Guard the public API as well as the input form. Invalid dependencies never become zero.
  const angles=['crown-angle','pavilion-angle'],percents=['star','lower-half','pavilion-depth'];
- for(const key of ['diameter-min','diameter-max','weight','depth','table','crown-angle','girdle','star','lower-half','pavilion-depth','crown-height','pavilion-angle']){
+ for(const key of ['diameter-average','diameter-min','diameter-max','weight','depth','table','crown-angle','girdle','star','lower-half','pavilion-depth','crown-height','pavilion-angle']){
   if(v[key]==null){v[key]=null;continue;}
-  if(typeof v[key]!=='number'||!Number.isFinite(v[key])||v[key]<=0||(angles.includes(key)&&v[key]>=90)||(percents.includes(key)&&v[key]>100)){v[key]=null;errors[key]='数值无效，请检查单位和有效范围。';}
+  if(typeof v[key]!=='number'||!Number.isFinite(v[key])||v[key]<=0||(angles.includes(key)&&v[key]>=90)||((percents.includes(key)||(key==='girdle'&&percentGirdle))&&v[key]>100)){v[key]=null;errors[key]='数值无效，请检查单位和有效范围。';}
  }
  const invalidate=(keys,msg)=>keys.forEach(key=>{v[key]=null;errors[key]=msg;});
  if(v['diameter-min']!==null&&v['diameter-max']!==null&&v['diameter-min']>v['diameter-max'])invalidate(['diameter-min','diameter-max'],'最小直径不能大于最大直径。');
- if(v.table!==null&&v['diameter-max']!==null&&v.table>=v['diameter-max'])invalidate(['table'],'台面宽度必须小于最大腰围直径。');
- for(const key of ['girdle','crown-height'])if(v[key]!==null&&v.depth!==null&&v[key]>=v.depth)invalidate([key],'该厚度或高度必须小于全深。');
- const results=items.map(([key,zh,en,unit,step,formula,source],i)=>({key,number:i+1,zh,en,unit,step:data.rules[key]?.step??step,formula,source:source+(data.rules[key]?' 当前 Grade 使用本项目两位小数规范，不是课件原分级精度。':''),status:'waiting',message:'待输入相关测量数据',raw:null,value:null,grade:null,steps:[],lookup:null,mode:sources[key]||'calculated'}));
+ const diameterLimit=directDiameter?v['diameter-average']:v['diameter-max'];
+ if(v.table!==null&&diameterLimit!==null&&v.table>=diameterLimit)invalidate(['table'],'台面宽度必须小于当前腰围直径。');
+ for(const key of (percentGirdle?['crown-height']:['girdle','crown-height']))if(v[key]!==null&&v.depth!==null&&v[key]>=v.depth)invalidate([key],'该厚度或高度必须小于全深。');
+ const results=items.map(([key,zh,en,unit,step,formula,source],i)=>({key,number:i+1,zh,en,unit,step:data.rules[key]?.step??step,formula,source:source+(data.rules[key]?' 当前 Grade 按课件规定步长取整后判断；显示值保留两位小数。':''),status:'waiting',message:'待输入相关测量数据',raw:null,value:null,grade:null,steps:[],lookup:null,mode:sources[key]||'calculated'}));
  const by=Object.fromEntries(results.map(r=>[r.key,r]));
  const needs=(r,keys)=>{
   const err=keys.flatMap(k=>Object.entries(errors).filter(([e])=>e===k||e.startsWith(k+'-')).map(([,msg])=>msg));
   if(err.length){r.status='invalid';r.message=[...new Set(err)].join(' ');return false;}
   const missing=keys.filter(k=>v[k]==null);
-  if(missing.length){r.message='待输入：'+missing.map(k=>({'diameter-min':'最小腰围直径','diameter-max':'最大腰围直径','weight':'实际重量','table':'平均台面宽度','girdle':'平均腰厚','depth':'全深','crown-angle':'平均冠角','pavilion-depth':'亭深比','star':'平均星刻面长度比','lower-half':'平均下腰刻面长度比','crown-height':'平均冠高','pavilion-angle':'平均亭角','culet':'底尖大小','girdle-min':'腰围最薄描述','girdle-max':'腰围最厚描述'})[k]||k).join('、');return false;}return true;
+  if(missing.length){r.message='待输入：'+missing.map(k=>({'diameter-average':'平均腰围直径','diameter-min':'最小腰围直径','diameter-max':'最大腰围直径','weight':'实际重量','table':'平均台面宽度','girdle':'平均腰厚','depth':'全深','crown-angle':'平均冠角','pavilion-depth':'亭深比','star':'平均星刻面长度比','lower-half':'平均下腰刻面长度比','crown-height':'平均冠高','pavilion-angle':'平均亭角','culet':'底尖大小','girdle-min':'腰围最薄描述','girdle-max':'腰围最厚描述'})[k]||k).join('、');return false;}return true;
  };
  function done(r,n,steps=[]){
   if(!Number.isFinite(n)){r.status='invalid';r.message='计算值超出可处理范围，请检查输入。';return;}
@@ -2057,32 +1791,21 @@ function calculate(state={}){
  }
  function blocked(r,upstream){r.status=upstream.status==='invalid'?'invalid':'waiting';r.message=upstream.message;}
  const d=by.diameter;
- if(needs(d,['diameter-min','diameter-max']))done(d,v['diameter-min']/2+v['diameter-max']/2,[`（${fmt(v['diameter-min'])} + ${fmt(v['diameter-max'])}）÷ 2 = ${fmt(v['diameter-min']/2+v['diameter-max']/2)} mm；后续除法使用未提前取整的平均直径。`]);
+ if(directDiameter){if(needs(d,['diameter-average']))done(d,v['diameter-average'],[`使用直接填写的平均腰围直径：${state.raw?.['diameter-average']||v['diameter-average']} mm；最小、最大原始读数未提供。`]);}
+ else if(needs(d,['diameter-min','diameter-max']))done(d,v['diameter-min']/2+v['diameter-max']/2,[`（${fmt(v['diameter-min'])} + ${fmt(v['diameter-max'])}）÷ 2 = ${fmt(v['diameter-min']/2+v['diameter-max']/2)} mm；后续除法使用未提前取整的平均直径。`]);
  function ratio(key,input){const r=by[key];if(!needs(r,[input]))return;if(d.status!=='ready'){blocked(r,d);return;}done(r,v[input]/d.raw*100,[`${fmt(v[input])} mm ÷ ${fmt(d.raw)} mm × 100% = ${fmt(v[input]/d.raw*100)}%`]);}
  function meanStep(key){
   if(sources[key]!=='raw')return [`使用已填写的平均值：${fmt(v[key])}${['crown-angle'].includes(key)?'°':key==='table'||key==='girdle'?' mm':'%'}`];
   const count=key==='table'?4:8;
   const readings=Array.from({length:count},(_,i)=>state.raw?.[key+'-'+(i+1)]??v[key+'-readings']?.[i]);
-  return [`${key==='girdle'?'平均腰厚＝8 个主刻面对应腰围高点的厚度之和 ÷ 8。 ':''}（${readings.map(x=>fmt(Number(x))).join(' + ')}）÷ ${count} = ${fmt(v[key])}${key==='table'||key==='girdle'?' mm':key==='crown-angle'?'°':'%'}`];
+  return [`${key==='girdle'?'平均腰厚＝8 次腰围谷位测得的厚度之和 ÷ 8。 ':''}（${readings.map(x=>fmt(Number(x))).join(' + ')}）÷ ${count} = ${fmt(v[key])}${key==='table'||key==='girdle'?' mm':key==='crown-angle'?'°':'%'}`];
  }
  ratio('table','table');if(by.table.status==='ready')by.table.steps.unshift(...meanStep('table'));
  for(const key of ['crown-angle','star','lower-half'])if(needs(by[key],[key]))done(by[key],v[key],meanStep(key));
- ratio('girdle','girdle');
- const g=by.girdle;
- if(g.status==='ready'){
-  g.steps.unshift(...meanStep('girdle'));g.numericGrade=g.grade;g.grade=null;
-  if(needs(g,['girdle-min','girdle-max'])){
-   const row=data.girdleCodes.indexOf(v['girdle-min']),col=data.girdleCodes.indexOf(v['girdle-max']);
-   if(row<0||col<0||row>col){g.status='invalid';g.message='腰厚描述无效：最薄处不能比最厚处更厚。';}
-   else {g.description=`${data.girdleNames[row]} to ${data.girdleNames[col]}`;g.lookup={table:'girdle',row,col};g.descriptionGrade=data.girdleMatrix[row][col];const order=['EX','VG','G','F','P'];g.grade=order[Math.max(order.indexOf(g.numericGrade),order.indexOf(g.descriptionGrade))];g.steps.push(`描述 ${g.description} → ${g.descriptionGrade}；${g.numericGrade?'腰厚比等级 '+g.numericGrade+'；取两者较低等级。':'腰厚比低于 2.5%，按描述评级。'}`);}
-  }else if(g.status!=='invalid')g.status='waiting';
- }
+ if(percentGirdle){if(needs(by.girdle,['girdle'])){if(d.raw!==null&&v.depth!==null&&d.raw*v.girdle/100>=v.depth){by.girdle.status='invalid';by.girdle.message='换算腰厚必须小于全深。';}else done(by.girdle,v.girdle,[`直接输入腰厚比 ${fmt(v.girdle)}%，无需再除以直径。`,...(d.raw!==null?[`腰厚（mm）＝平均腰围直径 ${fmt(d.raw)} mm × 腰厚比 ${fmt(v.girdle)} ÷ 100 ≈ ${fmt(d.raw*v.girdle/100)} mm。`]:[])]);}}else ratio('girdle','girdle');
+ const g=by.girdle;g.descriptionMode=manualDescription?'manual':'auto';
  const culet=by.culet;if(needs(culet,['culet'])){const found=data.culet[v.culet];if(found){culet.status='ready';culet.message='';culet.description=found[0];culet.grade=found[1];culet.steps=[`${found[0]} → ${found[1]}`];}else{culet.status='invalid';culet.message='请选择有效的底尖描述。';}}
  const pd=by['pavilion-depth'];if(needs(pd,['pavilion-depth']))done(pd,v['pavilion-depth'],[`已输入亭深比 ${fmt(v['pavilion-depth'])}%。`]);
- const pa=by['pavilion-angle'];
- if(sources['pavilion-angle']==='measured'){if(needs(pa,['pavilion-angle']))done(pa,v['pavilion-angle'],[`实测平均亭角 ${fmt(v['pavilion-angle'])}°。`]);}
- else if(pd.status!=='ready')blocked(pa,pd);
- else {const row=data.pavilion.findIndex(([x])=>x===pd.value);if(row<0){pa.status='out-of-range';pa.message=`亭深比 ${fmt(pd.value)}% 无明确数值可查（表内为 37.5–48.5%），请在可选区切换亭角实测。`;}else{pa.lookup={table:'pavilion',row};done(pa,data.pavilion[row][1],[`亭深比 ${fmt(pd.raw)}% → 取到 0.5% 为 ${fmt(pd.value)}% → 查得亭角约 ${fmt(data.pavilion[row][1])}°。`]);}}
  const ch=by['crown-height'];
  if(sources['crown-height']==='measured')ratio('crown-height','crown-height');
  else if(by.table.status!=='ready')blocked(ch,by.table);
@@ -2091,9 +1814,66 @@ function calculate(state={}){
   const t=round(by.table.raw,1),a=round(by['crown-angle'].raw,.5),row=data.crownRows.indexOf(t);
   // Edge headers are bounded estimates (20 and below/40 and above), not exact extrapolation.
   if(row<0||a<20||a>40){ch.status='out-of-range';ch.message=`台宽比 ${fmt(t)}%、冠角 ${fmt(a)}° 超出明确查表范围（48–75%、20–40°），请切换冠高实测。`;}
-  else {const cols=[Math.floor(a)-20];if(!Number.isInteger(a))cols.push(Math.ceil(a)-20);const cells=cols.map(c=>data.crown[row][c]);const estimate=cells.reduce((s,x)=>s+x,0)/cells.length;ch.lookup={table:'crown',row,cols,cells};done(ch,estimate,[`仅为匹配原参考表：台宽比 ${fmt(by.table.raw)}% → ${t}%；冠角 ${fmt(by['crown-angle'].raw)}° → ${a}°；不用于这两项的评级取整。`,cells.length===1?`查表：第 ${t}% 行、第 ${a}° 列 → 估算冠高比 ${fmt(estimate)}%。`:`半度估算冠高比＝相邻两列数值之和 ÷ 2：第 ${t}% 行的 ${Math.floor(a)}° 与 ${Math.ceil(a)}° 两格，（${cells.map(x=>fmt(x)).join(' + ')}）÷ 2 = ${fmt(estimate)}%。`]);}
+  else {const cols=[Math.floor(a)-20];if(!Number.isInteger(a))cols.push(Math.ceil(a)-20);const cells=cols.map(c=>data.crown[row][c]);const estimate=cells.reduce((s,x)=>s+x,0)/cells.length;ch.lookup={table:'crown',row,cols,cells};done(ch,estimate,[`仅为匹配原参考表：台宽比 ${fmt(by.table.raw)}% → ${t}%；冠角 ${fmt(by['crown-angle'].raw)}° → ${a}°；这两项也按相同步长评级。`,cells.length===1?`查表：第 ${t}% 行、第 ${a}° 列 → 估算冠高比 ${fmt(estimate)}%。`:`半度估算冠高比＝相邻两列数值之和 ÷ 2：第 ${t}% 行的 ${Math.floor(a)}° 与 ${Math.ceil(a)}° 两格，（${cells.map(x=>fmt(x)).join(' + ')}）÷ 2 = ${fmt(estimate)}%。`]);}
  }
  ratio('depth','depth');
+
+ // Resolve exactly one empty input from independently known total/crown/other height.
+ const td=by.depth;
+ const isBlank=key=>v[key]===null&&!Object.keys(errors).some(k=>k===key||k.startsWith(key+'-'))&&!(state.raw?.[key]?.trim())&&(key!=='girdle'||sources.girdle!=='raw');
+ function derive(target,other,label){
+  if(!isBlank(target.key))return;
+  if(td.raw===null||ch.raw===null||other.raw===null||[td,ch,other].some(x=>x.status==='invalid')){
+   target.message='待自动计算：需要有效全深、冠高及'+label+'；也可直接手动输入。';return;
+  }
+  const n=td.raw-ch.raw-other.raw;
+  if(!Number.isFinite(n)||n<=0||n>100){target.status='invalid';target.message='无法自动计算：全深比减去冠高比和'+label+'后，结果不大于0或超出有效范围，请检查输入。';return;}
+  target.derived=true;target.mode='derived';target.estimated=Boolean(ch.lookup);
+  const formula=target.key==='girdle'?'腰厚比＝全深比－冠高比－亭深比。':'亭深比＝全深比－冠高比－腰厚比。';
+  done(target,n,['自动计算（非手动输入）'+(target.estimated?'；冠高来自查表估算。':'。'),formula,`${fmt(td.raw)}% − ${fmt(ch.raw)}% − ${fmt(other.raw)}% ≈ ${fmt(n)}%（使用未取整值相减）。`]);
+  if(target.key==='girdle'&&d.raw!==null)target.steps.push(`换算腰厚＝平均腰围直径 ${fmt(d.raw)} mm × 腰厚比 ${fmt(n)} ÷ 100 ≈ ${fmt(d.raw*n/100)} mm。`);
+ }
+ if(g.raw!==null&&pd.raw===null)derive(pd,g,'腰厚比');
+ else if(pd.raw!==null&&g.raw===null)derive(g,pd,'亭深比');
+ else if(g.raw===null&&pd.raw===null){for(const item of [g,pd])if(isBlank(item.key))item.message='请先手动填写腰厚或亭深其中一项，另一项可由全深与冠高自动计算。';}
+ if(!g.derived&&!pd.derived&&[td,ch,g,pd].every(x=>x.raw!==null&&x.status!=='invalid')){
+  const sum=ch.raw+g.raw+pd.raw,diff=td.raw-sum;
+  if(Math.abs(diff)>1e-6)td.message=`三部分之和 ${fmt(sum)}% 与全深比 ${fmt(td.raw)}% 不一致，相差 ${fmt(Math.abs(diff))} 个百分点。已保留手动输入，请核对测量分界或查表估算差异。`;
+ }
+ if(g.status==='ready'){
+  if(!percentGirdle&&!g.derived)g.steps.unshift(...meanStep('girdle'));
+  g.numericGrade=g.grade;
+  if(manualDescription){
+   g.grade=null;
+   if(needs(g,['girdle-min','girdle-max'])){
+    const row=data.girdleCodes.indexOf(v['girdle-min']),col=data.girdleCodes.indexOf(v['girdle-max']);
+    if(row<0||col<0||row>col){g.status='invalid';g.message='腰厚描述无效：最薄位置不能比最厚位置更厚。';}
+    else{
+     g.description=`${data.girdleNames[row]} to ${data.girdleNames[col]}`;
+     g.lookup={table:'girdle',row,col};g.descriptionGrade=data.girdleMatrix[row][col];
+     const order=['EX','VG','G','F','P'];g.grade=g.numericGrade?order[Math.max(order.indexOf(g.numericGrade),order.indexOf(g.descriptionGrade))]:g.descriptionGrade;
+     g.steps.push(`手动描述 ${g.description} → ${g.descriptionGrade}；${g.numericGrade?'与百分比等级 '+g.numericGrade+' 取较低等级。':'取整后低于 2.5%，仅按描述矩阵评级。'}`);
+    }
+   }else if(g.status!=='invalid')g.status='waiting';
+  }else if(g.value<2.5){
+   g.status='not-applicable';g.description='';
+   g.message='自动模式：腰厚比按 0.5% 取整后低于 2.5%，Grade 显示 N/A；可切换手动厚薄描述评级。';
+  }else{
+   g.descriptionOptions=data.girdleCodes.filter((code,i)=>data.girdleMatrix[i][i]===g.grade);
+   // The course matrix has no P cell; keep the established project fallback ETK.
+   if(!g.descriptionOptions.length)g.descriptionOptions=[data.girdleAutoDescriptions[g.grade]];
+   const selected=v['girdle-auto-description'];
+   g.description=g.descriptionOptions.includes(selected)?selected:data.girdleAutoDescriptions[g.grade];
+   const index=data.girdleCodes.indexOf(g.description);
+   g.lookup={table:'girdle',row:index,col:index};g.descriptionGrade=data.girdleMatrix[index][index];
+   g.steps.push(`腰厚比取整为 ${fmt(g.value)}% → Grade ${g.grade}；自动描述：${g.description}（推荐填表文字，不代表实测厚薄范围）。`);
+  }
+ }
+ const pa=by['pavilion-angle'];
+ if(sources['pavilion-angle']==='measured'){if(needs(pa,['pavilion-angle']))done(pa,v['pavilion-angle'],[`实测平均亭角 ${fmt(v['pavilion-angle'])}°。`]);}
+ else if(pd.status!=='ready')blocked(pa,pd);
+ else {const row=data.pavilion.findIndex(([x])=>x===pd.value);if(row<0){pa.status='out-of-range';pa.message=`亭深比 ${fmt(pd.value)}% 无明确数值可查（表内为 37.5–48.5%），请在可选区切换亭角实测。`;}else{pa.lookup={table:'pavilion',row};done(pa,data.pavilion[row][1],[`亭深比 ${fmt(pd.raw)}% → 取到 0.5% 为 ${fmt(pd.value)}% → 查得亭角约 ${fmt(data.pavilion[row][1])}°。`]);}}
+
  const ow=by.overweight;
  if(d.status!=='ready')blocked(ow,d);
  else{
@@ -2108,13 +1888,13 @@ function calculate(state={}){
     const enteredWeight=state.raw?.weight?.trim()||String(ow.actualWeight);
     const n=(ow.actualWeight-ow.suggestedWeight)/ow.suggestedWeight*100;
     done(ow,n,[`实际重量 ${enteredWeight} ct，使用输入值直接计算。`,`（${enteredWeight} − ${ow.suggestedWeight.toFixed(2)}）÷ ${ow.suggestedWeight.toFixed(2)} × 100% ≈ ${fmt(n)}%。`]);
-    if(ow.actualWeight<=ow.suggestedWeight){ow.status='not-applicable';ow.grade=null;ow.message=ow.actualWeight<ow.suggestedWeight?'实际重量小于建议重量：勾选右侧 N/A，百分比和 Grade 留空。':'实际重量等于建议重量：勾选左侧 No，百分比和 Grade 留空。';}
+    if(ow.actualWeight<=ow.suggestedWeight){ow.status='not-applicable';ow.grade=null;ow.message=ow.actualWeight<ow.suggestedWeight?'实际重量小于建议重量：勾选右侧 N/A，百分比和 Grade 留空。':'实际重量等于建议重量：勾选右侧 N/A，百分比和 Grade 留空。';}
    }
   }
  }
  // Worksheet boxes: No / N/A; positive overweight only fills the percentage.
- ow.checkbox=ow.status==='not-applicable'?(ow.actualWeight<ow.suggestedWeight?'na':'no'):ow.status==='out-of-range'&&v.weight!==null&&!errors.weight?'na':null;
- if(ow.status==='out-of-range'&&ow.checkbox==='na')ow.message+=' 此项无法查表计算：勾选右侧 N/A。';
+ ow.checkbox=ow.status==='not-applicable'?'na':ow.status==='out-of-range'?'no':null;
+ if(ow.status==='out-of-range'&&ow.checkbox==='no')ow.message+=' 此项无法查表计算：勾选左侧 No，百分比和 Grade 留空。';
  return {version:data.version,results,byKey:by,errors,complete:results.every(r=>['ready','not-applicable'].includes(r.status))};
 }
 const api={calculate,grade,round,fmt,display,items};
@@ -2126,24 +1906,27 @@ if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.Diam
 (() => {
 'use strict';
 const form=document.getElementById('measurements');
-const modes={table:'average','crown-angle':'average',girdle:'average',star:'average','lower-half':'average','crown-height':'lookup','pavilion-angle':'lookup'};
+const modes={girdleDescription:'auto',diameter:'average',table:'average','crown-angle':'average',girdle:'average',star:'average','lower-half':'average','crown-height':'lookup','pavilion-angle':'lookup'};
 const repeated=['table','crown-angle','girdle','star','lower-half'];
-const basic=['diameter-min','diameter-max','weight','depth','pavilion-depth'];
-const descriptions=['girdle-min','girdle-max','culet'];
-const thicknessOrder=['ETN','VTN','THN','MED','STK','THK','VTK','ETK'];
+const basic=['weight','depth','pavilion-depth'];
 const el=name=>form.elements.namedItem(name);
 let current;
+let girdleUnit="mm";
+let convertedGirdle=null;
 function parse(control){
  const raw=control.value.trim();
  if(!raw)return {value:null,error:null};
  if(!/^[+-]?(?:\d+(?:\.\d*)?|\.\d+)$/.test(raw))return {value:null,error:'请输入有效数字，不要输入单位或其他文字。'};
- const v=Number(raw);
+ const v=control.name==='girdle'&&convertedGirdle?.text===raw&&convertedGirdle.unit===girdleUnit?convertedGirdle.value:Number(raw);
  if(!Number.isFinite(v)||v<=0)return {value:null,error:'请输入大于 0 的数值。'};
  if(control.dataset.kind==='angle'&&v>=90)return {value:null,error:'角度必须小于 90°。'};
  if(control.dataset.kind==='percent'&&v>100)return {value:null,error:'百分比不能超过 100%。'};
  return {value:v,error:null};
 }
 function syncModes(){
+ el("girdle").dataset.kind=girdleUnit==="percent"?"percent":"positive";
+ el("girdle").closest(".entry").querySelector(".unit").textContent=girdleUnit==="percent"?"%":"mm";
+ document.querySelectorAll("[data-girdle-unit]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.girdleUnit===girdleUnit)));
  document.querySelectorAll('[data-panel]').forEach(panel=>{
   const [name,mode]=panel.dataset.panel.split(':');const active=modes[name]===mode;
   panel.hidden=!active;panel.querySelectorAll('input,select').forEach(input=>input.disabled=!active);
@@ -2155,6 +1938,13 @@ function collect(){
  form.querySelectorAll('input:not(:disabled)').forEach(input=>{
   parsed[input.name]=parse(input);if(parsed[input.name].error)errors[input.name]=parsed[input.name].error;
  });
+ const descriptions=modes.girdleDescription==='manual'?['girdle-min','girdle-max','culet']:['culet'];
+ sources.girdleDescription=modes.girdleDescription;
+ values['girdle-auto-description']=modes.girdleDescription==='auto'?(el('girdle-auto-description')?.value||null):null;
+ sources.diameter=modes.diameter;
+ sources.girdleUnit=modes.girdle==='raw'?'mm':girdleUnit;
+ values['diameter-average']=modes.diameter==='average'?parsed['diameter-average'].value:null;
+ for(const name of ['diameter-min','diameter-max'])values[name]=modes.diameter==='raw'?parsed[name].value:null;
  basic.forEach(name=>{values[name]=parsed[name].value;sources[name]='measured'});
  repeated.forEach(name=>{
   sources[name]=modes[name];
@@ -2164,7 +1954,7 @@ function collect(){
   const count=readings.filter(v=>v!==null).length;
   const mean=count===n?readings.reduce((sum,v)=>sum+v/n,0):null;
   values[name]=mean!==null&&Number.isFinite(mean)?mean:null;
-  document.getElementById(`average-${name}`).textContent=values[name]===null?`已填写 ${count}/${n} 个有效值，等待完整测量。`:`平均值 ${Number(mean.toFixed(6))} ${el(name).closest('.entry').querySelector('.unit').textContent}（评级前未取整）`;
+  document.getElementById(`average-${name}`).textContent=values[name]===null?`已填写 ${count}/${n} 个有效值，等待完整测量。`:`平均值 ${Number(mean.toFixed(6))} ${(name==='girdle'?'mm':el(name).closest('.entry').querySelector('.unit').textContent)}（评级前未取整）`;
  });
  if(modes.table==='raw'&&values.table!==null){const readings=Array.from({length:4},(_,i)=>parsed[`table-${i+1}`].value);document.getElementById('average-table').textContent=`（${readings.join(' + ')}）÷ 4 = ${Number(values.table.toFixed(6))} mm`;}
  values['table-readings']=modes.table==='raw'?Array.from({length:4},(_,i)=>parsed[`table-${i+1}`].value):null;
@@ -2177,14 +1967,19 @@ function collect(){
  };
  const min=values['diameter-min'],max=values['diameter-max'];
  if(min!==null&&max!==null&&min>max){flag('diameter-min','最小直径不能大于最大直径。');flag('diameter-max','最大直径不能小于最小直径。');}
- if(max!==null){
-  if(values.table!==null&&values.table>=max)flag('table','台面宽度必须小于最大腰围直径。');
-  if(modes.table==='raw')for(let i=1;i<=4;i++){const name=`table-${i}`;if(parsed[name].value!==null&&parsed[name].value>=max){errors[name]='台面宽度必须小于最大腰围直径。';values.table=null;}}
+ const diameterLimit=modes.diameter==='average'?values['diameter-average']:max;
+ if(diameterLimit!==null){
+  if(values.table!==null&&values.table>=diameterLimit)flag('table','台面宽度必须小于当前腰围直径（展开模式使用最大直径）。');
+  if(modes.table==='raw')for(let i=1;i<=4;i++){const name=`table-${i}`;if(parsed[name].value!==null&&parsed[name].value>=diameterLimit){errors[name]='台面宽度必须小于当前腰围直径（展开模式使用最大直径）。';values.table=null;}}
  }
- if(values['girdle-min']&&values['girdle-max']&&thicknessOrder.indexOf(values['girdle-min'])>thicknessOrder.indexOf(values['girdle-max'])){flag('girdle-min','最薄处不能比最厚处更厚。');flag('girdle-max','最厚处不能比最薄处更薄。');}
- for(const name of ['girdle','crown-height'])if(values[name]!==null&&values.depth!==null&&values[name]>=values.depth)flag(name,'该高度或厚度必须小于全深。');
+ if(modes.girdleDescription==='manual'&&values['girdle-min']&&values['girdle-max']){
+  const codes=window.DiamondData.girdleCodes;
+  if(codes.indexOf(values['girdle-min'])>codes.indexOf(values['girdle-max'])){flag('girdle-min','最薄位置不能比最厚位置更厚。');flag('girdle-max','最厚位置不能比最薄位置更薄。');}
+ }
+ for(const name of ['girdle','crown-height'])if(values[name]!==null&&values.depth!==null&&(name==='girdle'&&sources.girdleUnit==='percent'?((modes.diameter==='average'?values['diameter-average']:(values['diameter-min']!==null&&values['diameter-max']!==null?(values['diameter-min']+values['diameter-max'])/2:null))*values[name]/100):values[name])>=values.depth)flag(name,'该高度或厚度必须小于全深。');
  repeated.forEach(name=>{if(modes[name]==='raw'&&Object.keys(errors).some(key=>key.startsWith(name+'-')))document.getElementById('average-'+name).textContent='请修正原始测量数据后再计算平均值。'});
- const required=[...basic,...repeated,...descriptions,...['crown-height','pavilion-angle'].filter(name=>modes[name]==='measured')];
+ if(modes.diameter==='raw'){const lo=values['diameter-min'],hi=values['diameter-max'];document.getElementById('average-diameter').textContent=lo!==null&&hi!==null?`（${lo} + ${hi}）÷ 2 = ${Number((lo/2+hi/2).toFixed(6))} mm`:'请填写两个有效读数，最小直径不能大于最大直径。';}
+ const required=[...(modes.diameter==='average'?['diameter-average']:['diameter-min','diameter-max']),...basic,...repeated,...descriptions,...['crown-height','pavilion-angle'].filter(name=>modes[name]==='measured')];
  return {values,sources,errors,required,completed:required.filter(name=>values[name]!==null).length,ready:required.every(name=>values[name]!==null)&&Object.keys(errors).length===0,raw:Object.fromEntries([...form.querySelectorAll('input:not(:disabled),select:not(:disabled)')].map(c=>[c.name,c.value]))};
 }
 function update(){
@@ -2196,7 +1991,7 @@ function update(){
  });
  document.getElementById('completion').textContent=`已完成 ${current.completed} / ${current.required.length} 项`;
  const errorCount=Object.keys(current.errors).length;
- document.getElementById('issues').textContent=errorCount?'请修正输入框下方标出的数据问题。':current.ready?'输入已完整，下方计算与单项评级已更新。':'填写 10 个共用数值与 3 个描述；其他结果无需另填。';
+ document.getElementById('issues').textContent=errorCount?'请修正输入框下方标出的数据问题。':current.ready?'输入已完整，下方计算与单项评级已更新。':`填写 ${modes.diameter==='average'?9:10} 个共用数值与 ${modes.girdleDescription==='manual'?'3 个描述':'1 个底尖描述'}；其他结果无需另填。`;
  form.dispatchEvent(new CustomEvent('measurementchange',{bubbles:true,detail:structuredClone(current)}));
 }
 // Decimal keyboard on mobile; reject non-decimal insertions instead of silently
@@ -2219,8 +2014,22 @@ form.addEventListener('keydown',event=>{
  const active=[...form.querySelectorAll('input:not(:disabled),select:not(:disabled)')].filter(control=>control.getClientRects().length);
  const next=active[active.indexOf(event.target)+1];if(next)next.focus();else event.target.blur();
 });
-form.addEventListener('input',update);form.addEventListener('change',update);form.addEventListener('submit',e=>e.preventDefault());
+form.addEventListener('input',event=>{if(event.target.name==='girdle')convertedGirdle=null;update();});form.addEventListener('change',update);form.addEventListener('submit',e=>e.preventDefault());
 document.querySelectorAll('[data-mode]').forEach(button=>button.addEventListener('click',()=>{modes[button.dataset.mode]=button.dataset.option;update()}));
+document.querySelectorAll('[data-girdle-unit]').forEach(button=>button.addEventListener('click',()=>{
+ const next=button.dataset.girdleUnit;if(next===girdleUnit)return;
+ const field=el('girdle'),reading=parse(field),v=current.values;
+ const diameter=modes.diameter==='average'?v['diameter-average']:(v['diameter-min']!==null&&v['diameter-max']!==null?v['diameter-min']/2+v['diameter-max']/2:null);
+ const hint=document.getElementById('girdle-unit-hint');
+ if(field.value.trim()){
+  if(reading.error||!(diameter>0)){hint.textContent='请先填写有效平均直径和腰厚，或清空腰厚后切换单位。';return;}
+  const converted=next==='percent'?reading.value/diameter*100:reading.value*diameter/100;
+  if(!Number.isFinite(converted)){hint.textContent='换算超出范围，请检查数值。';return;}
+  field.value=String(Number(converted.toPrecision(15)));
+  convertedGirdle={text:field.value,value:converted,unit:next};
+ }
+ girdleUnit=next;hint.textContent=next==='percent'?'当前直接输入腰厚比（%）':'当前输入毫米值';update();
+}));
 window.DiamondInputs=Object.freeze({getState:()=>structuredClone(current)});
 update();
 })();
@@ -2235,12 +2044,17 @@ function standards(r){
  const details=element('details',undefined,'standards');details.append(element('summary','查看本项评级标准'));
  const rule=data.rules[r.key];
  if(rule){
-  const table=element('table');const head=element('tr');head.append(element('th','Grade'),element('th','两位小数评级范围'));table.append(head);
+  const table=element('table');const head=element('tr');head.append(element('th','Grade'),element('th','按课件取整后的范围'));table.append(head);
   const grouped={};rule.ranges.forEach(([g,a,b])=>(grouped[g]??=[]).push((a===b?engine.display(a):`${engine.display(a)}–${engine.display(b)}`)+r.unit));
   Object.entries(grouped).forEach(([g,ranges])=>{const tr=element('tr');tr.append(element('td',g),element('td',ranges.join(' 或 ')));table.append(tr);});
   const tr=element('tr');tr.append(element('td',rule.fallback),element('td',r.key==='girdle'?`＞${Math.max(...rule.ranges.map(x=>x[2])).toFixed(2)}%`:r.key==='overweight'?'＞25%':`＜${Math.min(...rule.ranges.map(x=>x[1]))}${r.unit} 或 ＞${Math.max(...rule.ranges.map(x=>x[2]))}${r.unit}`));table.append(tr);details.append(table);
-  if(r.key==='girdle')details.append(element('p','低于 2.5% 按最薄／最厚描述矩阵判断；其他情况也结合描述，取较低等级。'));
-  if(r.key==='overweight')details.append(element('p','仅在实际重量大于建议重量时评级；小于建议重量勾 N/A，相等勾 No，均不评级。使用课件的 8% 分界。'));
+  if(r.key==='girdle'){
+   const na=element('tr');na.append(element('td','N/A'),element('td','＜2.50%'));table.append(na);
+   details.append(element('p','默认自动模式：先按 0.5% 取整，低于 2.5% 的 Grade 显示 N/A，Description 留空。手动模式：低于 2.5% 按描述矩阵评级，其余与百分比等级取较低者。'));
+   const mapping=element('table');const header=element('tr');header.append(element('th','Grade'),element('th','自动推荐 Description'));mapping.append(header);
+   Object.entries(data.girdleAutoDescriptions).forEach(([g,label])=>{const row=element('tr');row.append(element('td',g),element('td',label));mapping.append(row);});details.append(mapping,element('p','推荐描述不是实测厚薄范围；F 和 P 均使用 ETK，Grade 仍由百分比区分。','source'));
+  }
+  if(r.key==='overweight')details.append(element('p','仅在实际重量大于建议重量时评级；小于或等于建议重量勾 N/A；直径超出建议重量表范围勾 No，均不评级。使用课件的 8% 分界。'));
  }else if(r.key==='culet'){
   const table=element('table');Object.values(data.culet).forEach(([label,g])=>{const tr=element('tr');tr.append(element('td',label),element('td',g));table.append(tr)});details.append(table);
  }else details.append(element('p','原始记录表此框没有 Grade。'));
@@ -2249,7 +2063,7 @@ function standards(r){
 for(const [i,item] of engine.items.entries()){
  const [key,zh,en]=item,article=element('article',undefined,'result-row');article.id='result-'+key;
  const title=element('div',undefined,'result-title');title.append(element('span',String(i+1).padStart(2,'0'),'result-number'),element('h3',en),element('p',zh));
- const body=element('div',undefined,'result-body'),formula=element('p',item[5],'formula'),steps=element('div',undefined,'calculation-steps'),message=element('p',undefined,'result-message'),source=element('p',item[6]+(data.rules[key]?' 当前 Grade 使用本项目两位小数规范，不是课件原分级精度。':''),'source');body.append(formula,steps,message,source,standards({key,unit:item[3],source:item[6]+(data.rules[key]?' 当前 Grade 使用本项目两位小数规范。':'')}));
+ const body=element('div',undefined,'result-body'),formula=element('p',item[5],'formula'),steps=element('div',undefined,'calculation-steps'),message=element('p',undefined,'result-message'),source=element('p',item[6]+(data.rules[key]?' Grade 按课件规定步长取整后判断。':''),'source');body.append(formula,steps,message,source,standards({key,unit:item[3],source:item[6]+(data.rules[key]?' Grade 按课件规定步长取整后判断。':'')}));
  const outcome=element('div',undefined,'result-outcome'),value=element('strong','—'),rounding=element('span','待输入'),grade=element('b','—');outcome.append(value,rounding,grade);article.append(title,body,outcome);container.append(article);nodes[key]={article,steps,message,value,rounding,grade};
 }
 let current;
@@ -2262,6 +2076,35 @@ function update(state){
   n.rounding.textContent=r.raw!==null?`${['diameter','pavilion-depth'].includes(r.key)?'记录':'评级'}取到 ${r.step}${r.unit}：${engine.display(r.value)}${r.unit}`:r.description?'描述查表':'待计算';
   n.grade.textContent=r.status==='not-applicable'?'N/A':r.grade?'Grade '+r.grade:['diameter','pavilion-depth'].includes(r.key)?'无 Grade':'待评级';
  }
+ for(const key of ['girdle','pavilion-depth']){
+  const r=current.byKey[key],output=document.getElementById('linked-'+key);if(!output)continue;
+  const input=document.querySelector(`[name="${key}"]`);
+  output.textContent=r.derived?`自动计算 ${engine.display(r.raw)}%`:r.raw!==null?'使用手动输入':r.message;
+  output.classList.toggle('is-derived',Boolean(r.derived));
+  input.placeholder=r.derived?`自动：${engine.display(key==='girdle'&&state.sources.girdleUnit!=='percent'?current.byKey.diameter.raw*r.raw/100:r.raw)}`:'待输入 / 可自动计算';
+  if(r.derived)nodes[key].rounding.textContent='自动计算 · '+nodes[key].rounding.textContent;
+ }
+ const autoDescription=document.getElementById('input-girdle-auto-description');
+ if(autoDescription){
+  const g=current.byKey.girdle,options=g.descriptionMode==='auto'?(g.descriptionOptions||[]):[];
+  const chinese=['极薄','很薄','薄','中等','稍厚','厚','很厚','极厚'];
+  const signature=options.join(',');
+  if(autoDescription.dataset.options!==signature||!autoDescription.options.length){
+   autoDescription.replaceChildren();
+   for(const code of options){const option=element('option',`${code} · ${chinese[data.girdleCodes.indexOf(code)]}`);option.value=code;autoDescription.append(option);}
+   if(!options.length){const option=element('option',g.status==='not-applicable'?'N/A — 可切换手动厚薄描述':'等待有效腰厚等级');option.value='';autoDescription.append(option);}
+   autoDescription.dataset.options=signature;
+  }
+  if(!options.length)autoDescription.options[0].textContent=g.status==='not-applicable'?'N/A — 可切换手动厚薄描述':'等待有效腰厚等级';
+  autoDescription.disabled=!options.length;autoDescription.value=options.length?g.description:'';
+  document.getElementById('girdle-auto-description-hint').textContent=options.length?`Grade ${g.grade}：可选 ${options.join('、')}；选择描述不会改变 Grade。`:'有有效等级后显示可选描述。';
+ }
+ const derived=current.results.filter(r=>r.derived);
+ const sourceNote=document.getElementById('linked-output-note');
+ if(sourceNote){sourceNote.textContent=derived.map(r=>`${r.en}：自动计算 ${engine.display(r.raw)}%`).join('；');sourceNote.hidden=!derived.length;}
+ const autoRequired=derived.filter(r=>state.required.includes(r.key)).length;
+ document.getElementById('completion').textContent=`已完成 ${state.completed+autoRequired} / ${state.required.length} 项${autoRequired?'（含 '+autoRequired+' 项自动计算）':''}`;
+ if(autoRequired&&!Object.keys(state.errors).length)document.getElementById('issues').textContent='腰厚与亭深已联动；标注为自动计算的项目无需手动填写，其余数据按需补齐。';
  const count=current.results.filter(r=>['ready','not-applicable'].includes(r.status)).length;
  document.getElementById('result-status').textContent=`已得出 ${count} / 12 项结果`+(current.complete?'，可逐项查看计算依据。':'；补齐相关数据后自动更新。');
  document.dispatchEvent(new CustomEvent('calculationchange',{detail:structuredClone(current)}));
@@ -2279,14 +2122,14 @@ const domains={table:[35,80],'crown-angle':[15,45],girdle:[0,13],'pavilion-angle
 const make=(tag,text,cls)=>{const e=document.createElement(tag);if(text!=null)e.textContent=text;if(cls)e.className=cls;return e;};
 const panels={};
 function band(r,host){
- const box=make('div',null,'band-box'),caption=make('p',r.key==='girdle'?'腰厚比单项色带（最终 Grade 还需结合厚薄描述）':'两位小数评级位置','band-caption'),track=make('div',null,'grade-track'),marker=make('div','▼','grade-pointer');marker.hidden=true;
+ const box=make('div',null,'band-box'),caption=make('p','课件取整后的评级位置','band-caption'),track=make('div',null,'grade-track'),marker=make('div','▼','grade-pointer');marker.hidden=true;
  const [min,max]=domains[r.key],step=D.rules[r.key].step,total=Math.round((max-min)/step)+1;
  let groups=[];
  for(let i=0;i<total;i++){const val=E.round(min+i*step,step),grade=E.grade(r.key,val)||'none';const prev=groups.at(-1);if(prev?.grade===grade)prev.count++;else groups.push({grade,count:1});}
- groups.forEach(g=>{const seg=make('span',g.grade==='none'?'—':g.grade,'grade-segment');seg.style.flex=String(g.count);seg.style.background=colors[g.grade];seg.title=g.grade==='none'?'低于 2.5%，按描述评级':g.grade;track.append(seg);});
+ groups.forEach(g=>{const seg=make('span',g.grade==='none'?'N/A':g.grade,'grade-segment');seg.style.flex=String(g.count);seg.style.background=colors[g.grade];seg.title=g.grade==='none'?'取整后低于 2.5%，N/A':g.grade;track.append(seg);});
  track.append(marker);const ticks=make('div',null,'band-ticks');ticks.append(make('span',min+r.unit),make('span',`每格 ${step}${r.unit}`),make('span',max+r.unit));const current=make('p','等待有效评级','band-current');box.append(caption,track,ticks,current);host.append(box);
- return {update(result){const active=result.status==='ready'&&result.grade!==null&&result.value!==null;marker.hidden=!active;track.setAttribute('role','img');const grade=result.key==='girdle'?result.numericGrade:result.grade;
- if(active){const clipped=Math.max(min,Math.min(max,result.value));marker.style.left=((clipped-min)/step+.5)/total*100+'%';marker.dataset.grade=grade||'none';current.textContent=`${E.display(result.value)}${r.unit} → ${grade||'按描述判断'}`+(result.key==='girdle'?`；结合描述后 Grade ${result.grade}`:'')+(result.value<min||result.value>max?'（超出展示刻度，指示点位于端部）':'');}else current.textContent=result.status==='not-applicable'?'不超重 N/A，无评级指示点':'等待有效数据，不显示指示点';track.setAttribute('aria-label',current.textContent);}};
+ return {update(result){const active=result.status==='ready'&&result.grade!==null&&result.value!==null&&(result.key!=='girdle'||result.numericGrade!==null);marker.hidden=!active;track.setAttribute('role','img');const grade=result.key==='girdle'?result.numericGrade:result.grade;
+ if(active){const clipped=Math.max(min,Math.min(max,result.value));marker.style.left=((clipped-min)/step+.5)/total*100+'%';marker.dataset.grade=grade||'none';current.textContent=`${E.display(result.value)}${r.unit} → ${grade||'按描述判断'}`+(result.key==='girdle'&&result.descriptionMode==='manual'?`；结合描述后 Grade ${result.grade}`:'')+(result.value<min||result.value>max?'（超出展示刻度，指示点位于端部）':'');}else current.textContent=result.key==='girdle'&&result.descriptionMode==='manual'&&result.status==='ready'?`取整后低于 2.5%，按描述矩阵 → ${result.grade}；无百分比评级指示点`:result.status==='not-applicable'?(result.key==='girdle'?'取整后低于 2.5%，N/A，无评级指示点':'不超重 N/A，无评级指示点'):'等待有效数据，不显示指示点';track.setAttribute('aria-label',current.textContent);}};
 }
 function categories(r,host){const row=make('div',null,'category-track');host.append(row);const entries=r.key==='culet'?Object.entries(D.culet).map(([code,[name,g]])=>[code,name,g]):['EX','VG','G','F','P'].map(g=>[g,g,g]);
  entries.forEach(([code,name,g])=>{const cell=make('span',name,'category-cell');cell.dataset.code=code;cell.style.borderBottomColor=colors[g];cell.append(make('small',g));row.append(cell);});
@@ -2301,12 +2144,12 @@ function reference(key,host){
  if(type==='pavilion'){row(['亭深比 %','亭角 °'],-1,true);D.pavilion.forEach(([x,y],i)=>row([x.toFixed(1),y.toFixed(1)],i));}
  if(type==='crown'){row(['台宽比 % ＼ 冠角 °',...D.crownColumns.map(x=>x+'°')],-1,true);D.crown.forEach((r,i)=>row([D.crownRows[i]+'%',...r.map(x=>x.toFixed(1))],i));}
  if(type==='girdle'){row(['最薄 ＼ 最厚',...D.girdleCodes],-1,true);D.girdleMatrix.forEach((r,i)=>row([D.girdleCodes[i],...r.map(x=>x||'—')],i));}
- wrap.append(table);details.append(wrap);if(type==='girdle')details.append(make('p',D.girdleCodes.map((x,i)=>x+' = '+D.girdleNames[i]).join('；'),'source'));if(type==='crown')details.append(make('p','表中数值为冠高比 %。半度冠角取相邻两列平均；范围外请改用实测。','source'));host.append(details);
+ wrap.append(table);details.append(wrap);if(type==='girdle')details.append(make('p',D.girdleCodes.map((x,i)=>x+' = '+D.girdleNames[i]+'（'+['极薄','很薄','薄','中等','稍厚','厚','很厚','极厚'][i]+'）').join('；'),'source'));if(type==='crown')details.append(make('p','表中数值为冠高比 %。半度冠角取相邻两列平均；范围外请改用实测。','source'));host.append(details);
  function reveal(){const cell=table.querySelector('.lookup-hit');if(!cell)return;const a=cell.getBoundingClientRect(),b=wrap.getBoundingClientRect(),last=table.querySelectorAll('.lookup-hit'),z=last[last.length-1].getBoundingClientRect(),frozen=table.querySelector('th').getBoundingClientRect().width;wrap.scrollTop+=a.top-b.top-wrap.clientHeight/2;wrap.scrollLeft+=(a.left+z.right)/2-b.left-(frozen+(wrap.clientWidth-frozen)/2);}details.addEventListener('toggle',()=>{if(details.open)reveal()});
  return {update(result){const lookup=result.lookup?.table===type?result.lookup:null;for(const cell of table.querySelectorAll('th,td')){const row=Number(cell.dataset.row),col=Number(cell.dataset.col);const cols=lookup?.cols||[lookup?.col??0];const hit=!!lookup&&row===lookup.row&&cols.includes(col);cell.classList.toggle('lookup-hit',hit);cell.classList.toggle('lookup-cross',!!lookup&&type==='crown'&&!hit&&(row===lookup.row||cols.includes(col)));cell.classList.toggle('lookup-axis',!!lookup&&((row===lookup.row&&col===-1)||(row===-1&&cols.includes(col))));if(hit)cell.setAttribute('aria-current','true');else cell.removeAttribute('aria-current');}
- note.textContent=lookup?type==='crown'?`命中台宽比 ${D.crownRows[lookup.row]}% 行，冠角 ${lookup.cols.map(c=>D.crownColumns[c]+'°').join('、')} 列；${lookup.cells.length>1?'（':''}${lookup.cells.map(x=>E.fmt(x)).join(' + ')}${lookup.cells.length>1?'）÷ 2':''} → ${E.fmt(result.raw)}%。`:type==='weights'?`${D.weights[lookup.row][0].toFixed(1)} mm → ${D.weights[lookup.row][1].toFixed(2)} ct` :type==='pavilion'?`${D.pavilion[lookup.row][0]}% → 约 ${D.pavilion[lookup.row][1]}°`:`${result.description} → ${result.descriptionGrade}`:result.mode==='measured'?'当前使用实测值，不高亮查表位置。':'当前无有效查表位置。';if(details.open)reveal();},details,wrap};
+ note.textContent=lookup?type==='crown'?`命中台宽比 ${D.crownRows[lookup.row]}% 行，冠角 ${lookup.cols.map(c=>D.crownColumns[c]+'°').join('、')} 列；${lookup.cells.length>1?'（':''}${lookup.cells.map(x=>E.fmt(x)).join(' + ')}${lookup.cells.length>1?'）÷ 2':''} → ${E.fmt(result.raw)}%。`:type==='weights'?`${D.weights[lookup.row][0].toFixed(1)} mm → ${D.weights[lookup.row][1].toFixed(2)} ct` :type==='pavilion'?`${D.pavilion[lookup.row][0]}% → 约 ${D.pavilion[lookup.row][1]}°`:result.descriptionMode==='auto'?`所选描述 ${result.description}：${D.girdleCodes[lookup.row]} × ${D.girdleCodes[lookup.col]} → 矩阵 ${result.descriptionGrade}；百分比 Grade ${result.grade} 保持不变。`:`${result.description} → ${result.descriptionGrade}`:type==='girdle'&&result.descriptionMode==='auto'?'自动模式：选择有效 Description 后，高亮其同名行列交叉格。':result.mode==='measured'?'当前使用实测值，不高亮查表位置。':'当前无有效查表位置。';if(details.open)reveal();},details,wrap};
 }
-for(const item of E.items){const [key,zh,en,unit]=item,r={key,unit},host=document.querySelector('#result-'+key+' .result-body');const visual=make('div',null,'visuals');host.insertBefore(visual,host.querySelector('.standards'));panels[key]={band:domains[key]?band(r,visual):null,categories:['culet','girdle'].includes(key)?categories(r,visual):null,table:reference(key,host)};}
+for(const item of E.items){const [key,zh,en,unit]=item,r={key,unit},host=document.querySelector('#result-'+key+' .result-body');const visual=make('div',null,'visuals');host.insertBefore(visual,host.querySelector('.standards'));panels[key]={band:domains[key]?band(r,visual):null,categories:key==='culet'?categories(r,visual):null,table:reference(key,host)};}
 function update(result){for(const r of result.results){const p=panels[r.key];p.band?.update(r);p.categories?.update(r);p.table?.update(r);const badge=document.querySelector('#result-'+r.key+' .result-outcome b');badge.dataset.grade=r.grade||'';}}
 document.addEventListener('calculationchange',e=>update(e.detail));update(DiamondResults.getState());
 })();
@@ -2325,12 +2168,13 @@ function put(key,value,color){const node=svg.querySelector('[data-value="'+key+'
 function description(key,lines){const node=svg.querySelector('[data-value="'+key+'"]');if(!lines?.length)return;node.replaceChildren();node.style.fontSize=key==='girdle-description'?'11px':'13px';const y=Number(node.getAttribute('y'));lines.forEach((line,i)=>{const t=document.createElementNS(ns,'tspan');t.setAttribute('x',node.getAttribute('x'));t.setAttribute('y',y-(lines.length-1-i)*12);t.textContent=line;node.append(t);const width=key==='girdle-description'?88:76;if(t.getComputedTextLength()>width){t.setAttribute('textLength',width);t.setAttribute('lengthAdjust','spacingAndGlyphs');}});node.setAttribute('aria-label',lines.join(' '));}
 function update(result){const state=DiamondInputs.getState(),v=state.values,b=result.byKey;svg.querySelectorAll('[data-value]').forEach(n=>put(n.dataset.value,null));const valid=k=>typeof v[k]==='number'&&Number.isFinite(v[k])&&!state.errors[k];
  const num=(k,n,step=.01)=>{if(Number.isFinite(n))put(k,E.display(E.round(n,step)));};
- if(b.diameter.status==='ready'){num('diameter-min',v['diameter-min']);num('diameter-max',v['diameter-max']);num('diameter-average',b.diameter.value);}
- if(valid('table'))put('table-average',E.display(v.table));
+ if(b.diameter.status==='ready'){if(state.sources.diameter==='raw'){num('diameter-min',v['diameter-min']);num('diameter-max',v['diameter-max']);}else{num('diameter-min',b.diameter.raw);num('diameter-max',b.diameter.raw);}num('diameter-average',b.diameter.raw);}
+ if(valid('table')){put('table-average',E.display(v.table));if(state.sources.table==='average')for(let i=1;i<=4;i++)put('table-'+i,E.display(v.table));}
  if(state.sources.table==='raw'&&v['table-readings'])v['table-readings'].forEach((value,i)=>{if(value!==null&&!state.errors['table-'+(i+1)])put('table-'+(i+1),E.display(value));});
  const targets={table:'table-percent','crown-angle':'crown-angle-value',girdle:'girdle-percent','pavilion-angle':'pavilion-angle-value',star:'star-percent','crown-height':'crown-height-percent',depth:'depth-percent','pavilion-depth':'pavilion-depth-percent','lower-half':'lower-half-percent'};
  for(const [key,target] of Object.entries(targets)){const r=b[key];if(r.value!==null&&r.status!=='invalid'){put(target,E.display(r.raw));}if(r.grade)put(key+'-grade',r.grade,colors[r.grade]);}
  if(valid('depth'))num('depth-mm',v.depth);
+ if(b.girdle.status==='not-applicable')put('girdle-grade','N/A');
  if(b.girdle.description)description('girdle-description',b.girdle.description.split(' to ').flatMap((x,i)=>i?['to',x]:[x]));
  if(b.culet.grade){description('culet-description',[b.culet.description]);put('culet-grade',b.culet.grade,colors[b.culet.grade]);}
  const ow=b.overweight;svg.querySelector('#check-no').style.display=ow.checkbox==='no'?'':'none';svg.querySelector('#check-na').style.display=ow.checkbox==='na'?'':'none';if(ow.status==='ready'){put('overweight-percent',E.display(ow.raw));put('overweight-grade',ow.grade,colors[ow.grade]);}
